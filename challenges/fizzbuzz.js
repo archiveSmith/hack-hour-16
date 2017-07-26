@@ -26,6 +26,6 @@ function fizzbuzz(num) {
     else return ele;
   });
 }
-console.log(fizzbuzz(num));
+// console.log(fizzbuzz(num));
 
 module.exports = fizzbuzz;
