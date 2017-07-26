@@ -17,7 +17,15 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-
+let fizz = []
+//for loop to iterat eand check each number
+for (let i = 1; i < num+1; i++){
+	i % 3 === 0 && i % 5 === 0 ? fizz.push('fizzbuzz') :
+	i % 3 === 0 ? fizz.push('fizz') :
+	i % 5 === 0 ? fizz.push('buzz') :
+	fizz.push(i);
+}
+return fizz;
 }
 
 module.exports = fizzbuzz;
