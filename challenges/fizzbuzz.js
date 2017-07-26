@@ -19,19 +19,11 @@
 function fizzbuzz(num) {
     let arr = [];
 
-    for (let i = 1; i <= num; i++){
-        if (i % 3 === 0 && i % 5 === 0) {
-            arr.push('fizzbuzz');
-        }
-        if (i % 3 === 0) {
-            arr.push('fizz');
-        }
-        if (i % 5 === 0) {
-            arr.push('buzz');
-        }
-        else {
-            arr.push(i);
-        }
+    for (let i = 1; i <= num; i++) {
+        i % 3 === 0 && i % 5 === 0 ? arr.push('fizzbuzz') :
+            i % 3 === 0 ? arr.push('fizz') :
+                i % 5 === 0 ? arr.push('buzz') :
+                    arr.push(i);
     }
     return arr;
 
