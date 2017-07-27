@@ -24,7 +24,7 @@ function drawStairs(n) {
     for (let i = 0; i < starQty; i += 1) {
       result += '*';
     }
-    if (starQty !== n) result += '\n';
+    result += '\n';
     starQty += 1;
     spaceQty -= 1;
   }
