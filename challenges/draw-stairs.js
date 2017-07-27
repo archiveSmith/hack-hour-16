@@ -14,12 +14,15 @@
 */
 
 function drawStairs(n) {
-  while (n > 0) {
-    console.log('*'.repeat(n));
-    n--;
+  if (n > 0 && n <= 100) {
+    let steps = '';
+    for (let i = 1; i <= n; i++) {
+      steps += ' '.repeat(n - i) + '*'.repeat(i) + '\n';
+    }
+    console.log(steps);
   }
 }
 
-// console.log(drawStairs(6));
+console.log(drawStairs(6));
 
 module.exports = drawStairs;
