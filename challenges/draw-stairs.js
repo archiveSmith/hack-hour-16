@@ -15,13 +15,13 @@
 
 function drawStairs(n) {
   var x = "";
-  for (var i = 1; i <= n; i++) {
-    x += " ".repeat(n - i) + "*".repeat(i);
-    if (i != n) {
-    x += "\n";
+  if (1 <= n && n <= 100) {
+    for (var i = 1; i <= n; i++) {
+    x += " ".repeat(n - i) + "*".repeat(i) + "\n";
     }
-  }
-  console.log(x);
+    console.log(x);
+    }
+    else return undefined;
 }
 
 
