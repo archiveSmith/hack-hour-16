@@ -14,7 +14,15 @@
 */
 
 function drawStairs(n) {
-
+    let arr = [];
+    let revArr = arr.splice().reverse().join('');
+    for (let i = 0; i <= n; i++) {
+        arr.push(' ');
+    }
+    for (let i = 0; i <= n; i++) {
+        arr[i] = '*';
+        console.log(revArr);
+    }
 }
 
 
