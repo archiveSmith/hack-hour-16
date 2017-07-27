@@ -17,25 +17,18 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-
 	// ****************
 	// Input Validation
 	//*****************
 
 	// check for NaN
-	if (isNaN(num)) {
-		return false;
-	}
+	if (isNaN(num)) { return false; }
 
-	// check if <= 0
-	else if (num <= 0) {
-		return false;
-	}
+	// check if number <= 0
+	else if (num <= 0) { return false; }
 
 	// check if array -> this is to catch an array of 1 number, ex [10]
-	else if (Array.isArray(num)) {
-		return false;
-	}
+	else if (Array.isArray(num)) { return false; }
 
 	// ***********
 	// Valid Input
@@ -49,45 +42,48 @@ function fizzbuzz(num) {
 	for (let i = 1; i <= num; i++) {
 
 		// divisible by 3 and 5
-		if (i % 3 === 0 && i % 5 === 0) {
-			container.push("fizzbuzz");
-		} 
+		if (i % 3 === 0 && i % 5 === 0) { container.push("fizzbuzz"); } 
 
 		// divisible by 3
-		else if (i % 3 === 0) {
-			container.push("fizz");
-		}
+		else if (i % 3 === 0) { container.push("fizz"); }
 
 		// divisible by 5
-		else if (i % 5 === 0) {
-			container.push("buzz");
-		}
+		else if (i % 5 === 0) { container.push("buzz"); }
 
 		// not divisible
-		else {
-			container.push(i);
-		}
+		else { container.push(i); }
 	}
-
 	//return our container
 	return container;
-
 }
 
-// test cases: normal
+/// test cases: normal
 console.log("normal: " + fizzbuzz(3));
 console.log("normal: " + fizzbuzz(0));
 console.log("normal: " + fizzbuzz(1));
 console.log("normal: " + fizzbuzz(5));
 console.log("normal: " + fizzbuzz(200));
 
-// edge cases
+/// edge cases
 console.log("no number: " + fizzbuzz());
 console.log("array: " + fizzbuzz([15]));
 console.log("array: " + fizzbuzz([15, 17]));
 console.log("object: " + fizzbuzz({a: 15}));
 console.log("string num: " + fizzbuzz("15"));
 console.log("string: " + fizzbuzz("hello world"));
+
+
+// another way to do it
+// let retArray = [];
+// for (let i = 0; i <= n; i++) {
+// 	let current = '';
+// 	if (i%3 === 0) current += 'fizz';
+// 	if (i%5 === 0) current += 'buzz';
+// 	if (current) retArray.push(current);
+// 	else retArray.push(i);
+
+// 	return retArray;
+// }
 
 
 
