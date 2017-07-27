@@ -19,8 +19,9 @@ function drawStairs(n) {
 //how to make it justify to the right?
 //make 6 indexes of the array and add stars to the .length position?
 //have 2 counters?
-//hello
+
 newarray = [];
+newstring = '';;
 
 for(k = 1; k < n+1; k++ ){
 
@@ -32,11 +33,14 @@ for(var i = 0; i+k > 0; i--){
     newarray.push('*')
     }
     
-//console.log(newarray.join('').length)
-console.log(newarray.join(''))
+
+newstring = newstring + newarray.join('')
+newstring = newstring + '\n'
 newarray = [];
+
+
 }
-    
+    console.log(newstring)
 }
 
 
