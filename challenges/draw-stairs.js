@@ -22,18 +22,11 @@ function drawStairs(n) {
                 stairs += '\n'
             }
         }
-
-        return stairs;
+        console.log(stairs);
     }
-    return undefined;
+    else {
+        console.log(undefined);
+    }
 }
-
-
-
-var output = (drawStairs(6));
-console.log('------------------------------------');
-console.log(output);
-console.log('------------------------------------');
-
 
 module.exports = drawStairs;
