@@ -14,8 +14,17 @@
 */
 
 function drawStairs(n) {
-
+    //loop through the til n-1, add " "
+    //add " " + "*" to the string[n] + '/n'
+    //return string
+  var newString = "";
+  for(var i = 0; i < n; i++) {  
+    for(var i = 0; i < n-1; i++) {
+       newString += " "
+     }
+    newString += '\n'
+  }
+  return newString
 }
-
 
 module.exports = drawStairs;
