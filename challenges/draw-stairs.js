@@ -14,7 +14,24 @@
 */
 
 function drawStairs(n) {
+	var str = "";
+	var space = " ";
+	var count = 0;
 
+	if (n > 100) {
+		return "Please enter a number less than or equal to 100";
+	}
+
+	while (count < n) {
+		space += " ";
+		count++;
+	}
+
+	for (var i = 0; i <= n; i++) {
+		space = space.slice(0, -1);
+		str += "*";
+		console.log(space + str)
+	}
 }
 
 
