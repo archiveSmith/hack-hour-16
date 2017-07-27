@@ -19,7 +19,7 @@ function drawStairs(n) {
 //how to make it justify to the right?
 //make 6 indexes of the array and add stars to the .length position?
 //have 2 counters?
-
+//hello
 newarray = [];
 
 for(k = 1; k < n+1; k++ ){
