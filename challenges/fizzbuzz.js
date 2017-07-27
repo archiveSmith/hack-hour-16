@@ -19,13 +19,21 @@
 let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 function fizzbuzz(num) {
-  return num.map(function(ele) {
-    if (ele % 3 === 0 && ele % 5 === 0) return 'fizzbuzz';
-    else if (ele % 3 === 0) return 'fizz';
-    else if (ele % 5 === 0) return 'buzz';
-    else return ele;
-  });
+	let array = [];
+	for (let i = 1; i <= num; i++) {
+		if(i % 3 === 0 && i % 5 === 0) {
+			array.push('fizzbuzz');
+		} else if (i % 3 === 0) {
+			array.push('fizz');
+		} else if (i % 5 === 0) {
+			array.push('buzz');
+		} else {
+			array.push(i);
+		}
+
+	}
+	return array;
 }
-// console.log(fizzbuzz(num));
+console.log(fizzbuzz(16));
 
 module.exports = fizzbuzz;
