@@ -13,7 +13,7 @@
 
 */
 
-function drawStairs2(n) {
+function drawStairs(n) {
   let result = '';
   let starQty = 1;
   let spaceQty = n - starQty;
