@@ -14,8 +14,23 @@
 */
 
 function drawStairs(n) {
+	//container for string
+	let staircase = ''
+	let spaces = n-1
+	//loop to get spaces and asterisks
+  for (let j = 1; j < n; j++){
+	  for (let i = 1; i < n; i++){
+		  if (i <= spaces){
+        staircase.concat(' ')
+      }
+       if (i > spaces){
+        staircase.concat('*')
+	     }
+     
+	}
+    spaces--;
+    staircase.concat('\n')
+  }
 
-}
-
-
-module.exports = drawStairs;
+console.log(drawStairs(10));
+// module.exports = drawStairs;
