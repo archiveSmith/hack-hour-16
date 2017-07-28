@@ -17,11 +17,9 @@ function drawStairs(n) {
   var x = "";
   if (1 <= n && n <= 100) {
     for (var i = 1; i <= n; i++) {
-    x += " ".repeat(n - i) + "*".repeat(i) + "\n";
+    console.log(" ".repeat(n - i) + "*".repeat(i));
     }
-    console.log(x);
-    }
-    else return undefined;
+}
 }
 
 
