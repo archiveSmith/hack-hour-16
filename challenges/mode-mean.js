@@ -11,10 +11,9 @@
 
 
 function modemean(array) {
-  if (array.length === 1) return array[0];
   const count = array.reduce((count, num) => {
     if (count[num]) count[num]++;
-    else count[num] = 1
+    else count[num] = 1;
     return count;
   }, {});
 
@@ -26,7 +25,7 @@ function modemean(array) {
   }, array[0]);
 
   const mean = Math.floor(array.reduce((sum, num) => sum + num) / array.length);
-  return mean.toString() === mode;
+  return mean.toString() === mode.toString();
 }
 
 module.exports = modemean;
