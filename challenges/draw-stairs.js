@@ -12,9 +12,13 @@
 ******
 
 */
-
 function drawStairs(n) {
-
+  let stairs = '';
+  const step = '*';
+  for (let i = 1; i <= n; i++) {
+    stairs += `${' '.repeat(n-i) + step.repeat(i)  }\n`;
+  }
+  console.log(stairs);
 }
 
 
