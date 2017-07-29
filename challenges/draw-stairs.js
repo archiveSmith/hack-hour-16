@@ -1,3 +1,21 @@
+/*
+	APPROACH LECTURE
+		// define input - if number (inclusive)
+
+		let space = '';
+		let splat = '';
+
+		for (let i = 1; i <= n; i++) {
+			space = ' '.repeat(n-i);
+			splat = '*'.repeat(i);
+			console.log(space + splat);
+		}
+
+		for (let i = 0; i <= n; i++) {
+			console.log(' '.repeat(n-i) + '*'.repeat(i));
+		}
+*/
+
 /* Write a function that console logs a staircase of any given height where 1 <= N <= 100.
  The staircase must climb up from left to right. The last line should only consist of asterisks,
  without any leading/trailing spaces.
@@ -41,19 +59,18 @@ function drawStairs(n) {
 		// assign number of spaces
 		let numSpaces = n - i;
 
-		// add to space padding
-		for (let j = 0; j < numSpaces; j++) {
-			current += space;
-		}
+		// add to space padding (n - i)
+		for (let j = 0; j < numSpaces; j++) { current += space; }
 
-		// add stairss
-		for (let j = 0; j < i; j++) {
-			current += stair;
-		}
+		// add stairs (i times)
+		for (let j = 0; j < i; j++) { current += stair; }
 
 		// print out current level of stairs
 		console.log(current);
 	}
+
+	// should it return true to show success?
+	// return true
 
 	// this is used to log invalid parameters and return false
 	function printError() {
