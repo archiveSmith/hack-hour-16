@@ -14,7 +14,7 @@
  * 
  */
 
- array = [1,5,5,5,2,3,2,2]
+ array = [1,2,2,3]
 
 
 function modemean(array) {
