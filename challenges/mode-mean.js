@@ -9,9 +9,9 @@
  *
  */
 function modemean(array) {
-  let mean = array.reduce(function (sum, num) {
+  let mean = Math.floor(array.reduce(function (sum, num) {
   return sum + num
-  })/array.length
+  })/array.length)
 
   let mode;
 
@@ -36,13 +36,13 @@ function modemean(array) {
   }
 
   if (modes.length > 1) {
-    mode = modes.sort(function (a, b) {return b-a})[0]
+    mode = Math.max(...modes)
   } else {
     mode = parseInt(modes);
   }
 
-  return mean === mode
+  return mode === mean
 
 }
-console.log(modemean([1,2,3]))
+console.log(modemean([1,2,3,2]))
 module.exports = modemean;
