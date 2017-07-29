@@ -13,26 +13,36 @@
 
 */
 
-function drawStairs(n) {
-  for (let i = 1; i <= n; i++) {
-    console.log(Array(n-i).fill(' ').concat(Array(i).fill('*')).join(''))
-  }
-}
-drawStairs(500)
+// function drawStairs(n) {
+//   for (let i = 1; i <= n; i++) {
+//     console.log(Array(n-i).fill(' ').concat(Array(i).fill('*')).join(''));
+//   }
+// }
+// drawStairs(500)
 
 function drawStairs2(n) {
-  let stair = [];
+  let stair = '';
   for (let i = 0; i <= n; i++) {
-    console.log(stair.join(''));
-    stair = [];
+    console.log(stair)
+    stair = '';
     for (let j = 1; j <= n; j++) {
-      if (j >= n-i) {
-        stair.push('*')
+      if (j >= n - i) {
+        stair += ('*')
       } else {
-        stair.push(' ')
+        stair += (' ')
       }
     }
   }
 }
 drawStairs2(3)
+
+// Hackhour Solution
+function drawStairs(n) {
+  for (let i = 1; i <= n; i++) {
+    console.log(' '.repeat(n - i) + '*'.repeat(i))
+  }
+}
+
+// The repeat() method constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together.
+// string.repeat(numberOfRepeat)
 // module.exports = drawStairs;
