@@ -29,7 +29,9 @@ function modemean(array) {
      }
   }
   
-	mode = Object.keys(mode).reduce(function(prev, cur) {
+  mode = Object.values(mode);
+  
+  mode = mode.reduce(function(prev, cur) {
     return prev > cur ? prev : cur;
   });
 
