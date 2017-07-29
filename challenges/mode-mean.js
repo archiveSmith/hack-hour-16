@@ -11,6 +11,7 @@
 
 
 function modemean(array) {
+  if (array.length === 1) return array[0];
   const count = array.reduce((count, num) => {
     if (count[num]) count[num]++;
     else count[num] = 1
