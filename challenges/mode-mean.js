@@ -12,6 +12,8 @@
 
 function modemean(array) {
   var num = 0;
+  var count = 1;
+  var temp;
   
 	for (var i = 0; i < array.length; i++) {
     num += array[i];
@@ -29,9 +31,19 @@ function modemean(array) {
      }
   }
   
-	mode = Object.values(mode).reduce(function(prev, cur) {
-    return prev > cur ? prev : cur;
-  });
+  for (var prop in mode) {
+    if (mode[prop] > count) {
+      count = mode[prop];
+      temp = prop;
+    }
+  }
+  
+  mode = parseInt(temp);
+  
+//   console.log(mode);
+// 	mode = Object.values(mode).reduce(function(prev, cur) {
+//     return prev > cur ? prev : cur;
+//   });
 
   return mean === mode;
 }
