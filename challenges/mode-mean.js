@@ -34,7 +34,7 @@ function modemean(array) {
             acc = x;
         }
         return acc;
-    }, 0);
+    });
     //finally, compare the calculated values to return `true` if the same, or `false` if not
     return mean === mode;
 }
