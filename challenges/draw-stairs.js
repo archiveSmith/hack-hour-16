@@ -32,8 +32,7 @@ function drawStairs(n) {
  for(var i = 1; i <= n; i++){
    spaces = " ".repeat(n-i)
    astricks = "*".repeat(i)
- }
-  console.log(space+astricks)
+   console.log(spaces+astricks)
+ } 
 }
-drawStairs(4)
 module.exports = drawStairs;
