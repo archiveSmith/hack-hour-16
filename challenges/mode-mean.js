@@ -15,10 +15,9 @@ function modemean(array) {
   let mode;
   const obj = {};
 
-  array.reduce((acc, ele) => {
-    acc + ele;
-    mean = acc / array.length;
-  }, 0);
+  mean = array.reduce((acc, ele) => {
+    return acc + ele;
+  }, 0) / array.length;
 
   array.forEach((ele) => {
     if (obj[ele]) {
@@ -27,17 +26,19 @@ function modemean(array) {
       obj[ele] = 1;
     }
   });
-  const arr = Object.keys(obj);
-  mode = arr[0];
+let arr = Object.keys(obj);
+
+mode = obj[arr[0]];
 
   for (let i = 1; i < arr.length; i++) {
-    if (obj[arr[i]] > obj[mode]) {
-      obj[mode] = obj[arr[i]];
+    if (obj[arr[i]] > mode) {
+      mode = obj[arr[i]];
     }
   }
+  
   return Math.floor(mean) === mode;
 }
-// console.log(modemean([arr]));
+// console.log(modemean([1, 2, 2, 5]));
 
 
 module.exports = modemean;
