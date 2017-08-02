@@ -31,5 +31,7 @@ function drawStairs(n) {
   console.log(result);
 }
 
+drawStairs(10)
 
-module.exports = drawStairs;
+
+// module.exports = drawStairs;
