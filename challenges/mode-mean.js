@@ -11,6 +11,7 @@
 
 
 function modemean(array) {
+<<<<<<< HEAD
     //MODE
   //The number that occur the most
   //iterate through the array and record the occurances in an Object
@@ -62,6 +63,9 @@ function modemean(array) {
   }
   
   
+=======
+
+>>>>>>> a0598932afffedeb7098cc55bd823627a768f994
 }
 
 module.exports = modemean;
