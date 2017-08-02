@@ -10,9 +10,9 @@ function pow(base, power) {
   //   power--;
   // }
   // return res
-  
+
   if (power === 1) { return base }
-  return pow(base *  , power--)
+  return base * pow(base, power-1)
 }
 console.log(pow(3, 3))
 module.exports = pow;
