@@ -36,16 +36,17 @@ function kthToLastNode(k, head) {
   }
   return kNode.value;
 }
-// const a = new Node('a')
-// const b = new Node('b')
-// const c = new Node('c')
-// const d = new Node('d')
-// const e = new Node('e')
-// a.next = b;
-// b.next = c;
-// c.next = d;
-// d.next = e;
-// console.log(kthToLastNode(2, a))
+const a = new Node('a')
+
+const b = new Node('b')
+const c = new Node('c')
+const d = new Node('d')
+const e = new Node('e')
+a.next = b;
+b.next = c;
+c.next = d;
+d.next = e;
+console.log(kthToLastNode(5, a))
 
 //  ***2 iterations..can do one??
 
