@@ -165,36 +165,6 @@ console.log("bad head: " + kthToLastNode(2, 7));
 
   nodes.forEach( node => this.push(node) )
 }
-//  adds node to end of list
-LinkedList.prototype.push = function(value) {
-// when first node is created change linkedList. head and .tail to node position in memory
-// when add new node the linkedlist.tail value becomes new node position in memory.
-//last node created needs to point to node being created
-
-	// make our new node, and assign it to newNode
-	let newNode = new Node(value);
-
-	// if no head present
-		// make a head
-		// point head to first value
-	// if (this.head == null) {    //(!this.head)
-	if (!this.head) {
-		this.head = newNode;
-		this.tail = newNode;
-
-		// approach
-		// this.head = this.tail = newNode;
-	}
-
-	else {
-		// let curNode = this.tail 	// defining the last node
-		// curNode.next = newNode	// re-wire the last node to the new node
-		// this.tail = newNode. 	// re-point the tail
 
 
-		// approach :
-		this.tail.next = newNode;  // old node to new node
-		this.tail = this.tail.next // make tail new node
-	}
-};
-
+module.exports = {Node: Node, kthToLastNode: kthToLastNode};
