@@ -4,6 +4,14 @@
 
 function pow(base, power) {
 
-}
+  if(power === 1){
+    
+    return 5
+    
+  } else {
+    
+    return base * pow(base, power-1)
 
-module.exports = pow;
+  }
+
+module.exports = pow(base,power-1)
