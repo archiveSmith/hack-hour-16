@@ -28,21 +28,21 @@ function pow(base, power) {
     // ** input validation **
     // **********************
     if (typeof base === 'object' || typeof power === 'object') {
-        console.log("[Error] paramaters invalid: " + base + " " + power)
+        // console.log("[Error] paramaters invalid: " + base + " " + power)
         return 'undefined';
     }
     if (base === undefined || power === undefined) {
-        console.log("[Error] paramaters invalid: " + base + " " + power)
+        // console.log("[Error] paramaters invalid: " + base + " " + power)
         return 'undefined';
     }
 
 
     if (base === null || power === null) {
-        console.log("[Error] paramaters invalid: " + base + " " + power)
+        // console.log("[Error] paramaters invalid: " + base + " " + power)
         return 'undefined';
     }
     if (isNaN(base) || isNaN(power)) {
-        console.log("[Error] paramaters invalid: " + base + " " + power)
+        // console.log("[Error] paramaters invalid: " + base + " " + power)
         return 'undefined';
     }
 
@@ -65,27 +65,27 @@ function pow(base, power) {
 // ****************
 
 // good
-console.log('0, 0: ' + (pow(0,0) === 1));
-console.log('0, 9: ' + (pow(0,9) === 0));
-// console.log('0, 0 (1): ' + pow(0,0));
-// console.log('0, 9: ' + pow(0,9));
+// console.log('0, 0: ' + (pow(0,0) === 1));
+// console.log('0, 9: ' + (pow(0,9) === 0));
+// // console.log('0, 0 (1): ' + pow(0,0));
+// // console.log('0, 9: ' + pow(0,9));
 
 
-console.log('1, 8: ' + (pow(1,8) === 1));
-console.log('1, 1: ' + (pow(1,1) === 1));
+// console.log('1, 8: ' + (pow(1,8) === 1));
+// console.log('1, 1: ' + (pow(1,1) === 1));
 
-console.log('2, 8: ' + (pow(2,8) === 256));
-console.log('5, 3: ' + (pow(5,3) === 125));
-console.log('4, 1: ' + (pow(4,10) === 1048576));
-console.log('10, 7: ' + (pow(10,7) === 10000000));
+// console.log('2, 8: ' + (pow(2,8) === 256));
+// console.log('5, 3: ' + (pow(5,3) === 125));
+// console.log('4, 1: ' + (pow(4,10) === 1048576));
+// console.log('10, 7: ' + (pow(10,7) === 10000000));
 
-// bad
-console.log('2 : ' + pow(2));
-console.log('() : ' + pow());
-console.log('[] : ' + pow(4, []));
-console.log('{} : ' + pow(5, {}));
-console.log('null : ' + pow(null, null));
-console.log('undefined : ' + pow(undefined, undefined));
+// // bad
+// console.log('2 : ' + pow(2));
+// console.log('() : ' + pow());
+// console.log('[] : ' + pow(4, []));
+// console.log('{} : ' + pow(5, {}));
+// console.log('null : ' + pow(null, null));
+// console.log('undefined : ' + pow(undefined, undefined));
 
 
 module.exports = pow;
