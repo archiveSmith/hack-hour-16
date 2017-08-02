@@ -27,20 +27,12 @@
 
 
 function drawStairs(n) {
-    var arr = ["*"]
-    var space = [" "]
-    var count = 0
-for(var i = 0; i < n-1; i++){
-  space.push(" ")
- 
+ var spaces = ""
+ var astricks = ""
+ for(var i = 1; i <= n; i++){
+   spaces = " ".repeat(n-i)
+   astricks = "*".repeat(i)
+   console.log(spaces+astricks)
+ } 
 }
-for(var i = n; i > 0; i--){
-  console.log(space.concat(arr))
-  arr.push("*")
-  space.pop()
-}
-
-    
-}
-drawStairs(4)
 module.exports = drawStairs;
