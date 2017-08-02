@@ -16,17 +16,21 @@
  * kthToLastNode(2, a); -> returns 'D' (the value on the second to last node)
  */
 
+<<<<<<< HEAD
  //setup for testing
 function LinkedList() {
   this.head = null;
   this.tail = null;
 }
 
+=======
+>>>>>>> a0598932afffedeb7098cc55bd823627a768f994
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
+<<<<<<< HEAD
 LinkedList.prototype.push = function(value) {
   let obj = new Node(value);
   if (!this.head) {
@@ -59,3 +63,10 @@ function kthToLastNode(k, head) {
 }
 
 console.log(kthToLastNode(2, a.head));
+=======
+function kthToLastNode(k, head) {
+
+}
+
+module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+>>>>>>> a0598932afffedeb7098cc55bd823627a768f994
