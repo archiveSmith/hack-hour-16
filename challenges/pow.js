@@ -2,8 +2,16 @@
  * Use recursion!
  */
 
-function pow(base, power) {
-
+var temp;
+function pow(base, power, count = 1) {
+  if(temp === undefined){temp = base}
+if(count !== power){
+  base = base * temp
+  count++
+}else {
+  return base
+}
+return pow(base,power,count)
 }
 
 module.exports = pow;
