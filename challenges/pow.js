@@ -14,4 +14,6 @@ function pow(base, power) {
 
   }
 
-module.exports = pow(base,power-1)
+}
+
+module.exports = pow;
