@@ -22,5 +22,13 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+	var current;
 
+	while (current) {
+		if (current.value === k) {
+			return current.value;
+		} else {
+			return "Not Found";
+		}
+	}
 }
