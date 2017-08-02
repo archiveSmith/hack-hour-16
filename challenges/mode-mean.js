@@ -26,11 +26,11 @@ function modemean(array) {
     //keep a running count of how many times an element is repeated
     let repeats = 0;
     //calculate how often an element is repeated, and return the most repeated one
-    let mode = array.reduce(function(acc, x){
+    let mode = array.reduce((acc, x) => {
         let lengthOfX = array.filter(y => {return y === x}).length;
         //if an element is repeated the same number of times, we want to use the higher number
         if (lengthOfX >= repeats && x > acc) {
-            repeats = array.filter(y => {return y === x}).length;
+            repeats = lengthOfX;
             acc = x;
         }
         return acc;
