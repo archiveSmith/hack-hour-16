@@ -82,16 +82,9 @@ function modemean(array) {
     // console.log("mean: " + mean);
     // console.log('mode: ' + mode);
 
-    // if mean and mode are equal, return true
-    if (mean === mode) {
-        // console.log('return true');
-        return true;
-    }
-    // else, if mean != mode, return false
-    else {
-        // console.log('return false');
-        return false;
-    }
+    // if mean === mode, return true, else return false
+    if (mean === mode) { return true; }
+    else { return false; }
 }
 
 // ****************
