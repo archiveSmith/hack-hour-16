@@ -13,7 +13,7 @@
 function modemean(array) {
 
 //this find the mean of the array
-let mean = Math.floor((array.reduce((a,b) => a + b ))/array.length)
+	let mean = Math.floor((array.reduce((a,b) => a + b ))/array.length)
 
 //this line finds the number of occerences and index them to an object
 	let mode = array.reduce(function (acc, curr) {
@@ -28,10 +28,10 @@ let mean = Math.floor((array.reduce((a,b) => a + b ))/array.length)
 
 
 //container for key with highest value
-let container = 0
+	let container = 0
 
 //container to iterate through mode object values
-let modeArr = Object.keys(mode)
+	let modeArr = Object.keys(mode)
 
 //determining highest key value and reassigns container. also parses key string to number value
 	for (let i = 0; i < modeArr.length; i++){
