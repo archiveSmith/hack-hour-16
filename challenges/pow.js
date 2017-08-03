@@ -4,13 +4,18 @@
 
 function pow(base, power) {
     var array = [];
+    var result = 1;
     for(var i = 0; i < power; i++) {
         array.push(base)
     }
-    return array;
+    
+    for(var j = 0; j < array.length; j++) {
+      result = result * array[j]
+    }
+    return result;
 }
 
-console.log(pow(2,1))
+
 
 
 module.exports = pow;
