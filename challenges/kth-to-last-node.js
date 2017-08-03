@@ -21,6 +21,7 @@ function Node(val) {
   this.next = null;
 }
 
+<<<<<<< HEAD
 const a = new Node('A');
 const b = new Node('B');
 const c = new Node('C');
@@ -55,3 +56,10 @@ function kthToLastNode(k, head) {
 }
 
 console.log(kthToLastNode(2, a));
+=======
+function kthToLastNode(k, head) {
+
+}
+
+module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+>>>>>>> a0598932afffedeb7098cc55bd823627a768f994
