@@ -8,16 +8,14 @@
  * Return true or false
  *
  */
-const arr = [13, 13, 13, 13, 14, 14, 16, 18, 21];
+
 
 function modemean(array) {
-  let mean;
+<<<<<<< HEAD
   let mode;
   const obj = {};
 
-  mean = array.reduce((acc, ele) => {
-    return acc + ele;
-  }, 0) / array.length;
+  const mean = array.reduce((acc, ele) => acc + ele, 0) / array.length;
 
   array.forEach((ele) => {
     if (obj[ele]) {
@@ -26,19 +24,23 @@ function modemean(array) {
       obj[ele] = 1;
     }
   });
-let arr = Object.keys(obj);
+  const arr = Object.keys(obj);
 
-mode = obj[arr[0]];
+  mode = obj[arr[0]];
 
   for (let i = 1; i < arr.length; i++) {
     if (obj[arr[i]] > mode) {
       mode = obj[arr[i]];
     }
   }
-  
+
   return Math.floor(mean) === mode;
 }
 // console.log(modemean([1, 2, 2, 5]));
 
+=======
+
+}
+>>>>>>> a0598932afffedeb7098cc55bd823627a768f994
 
 module.exports = modemean;
