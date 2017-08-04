@@ -5,6 +5,7 @@
 
 //MY REFRACTORED SOLUTION
 function pow(base, power, temp) {
+  if(power === 0){return 1}
   if(temp === undefined){temp = base}
 if(power > 1){
   base = base * temp
@@ -16,8 +17,7 @@ return pow(base,power,temp)
 }
 
 //MY OLD SOLUTION
-// var temp;
-// function pow(base, power, count = 1) {
+// function pow(base, power, count = 1, temp) {
 //   if(temp === undefined){temp = base}
 // if(count !== power){
 //   base = base * temp
@@ -25,7 +25,7 @@ return pow(base,power,temp)
 // }else {
 //   return base
 // }
-// return pow(base,power,count)
+// return pow(base,power,count, temp)
 // }
 
 module.exports = pow;
