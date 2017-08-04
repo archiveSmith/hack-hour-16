@@ -20,17 +20,17 @@ if(array.length === 0){
 }
 
 //array = array.split('')
-i = 0;
-j = array.length - 1
+var i = 0;
+var j = array.length - 1;
 
 
 while(i < j){
 
-    storage = array[i]
-    array[i] = array[j]
-    array[j] = storage
-i++  
-j--
+    storage = array[i];
+    array[i] = array[j];
+    array[j] = storage;
+i++ ; 
+j--;
 }
 return array
 
