@@ -14,8 +14,8 @@
  */
 
 function reverseInPlace(array) {
-  if (array.length === 0) return array;
-  
+  if (array.length === 0) return [];
+
   for (let i = 0; i < array.length; i++) {
     array.splice(array.length-i, 0, array[0]);
     array.splice(0, 1);
