@@ -24,7 +24,7 @@ function fizzbuzz(num) {
 	// check for NaN
 	if (isNaN(num)) { return false; }
 
-	// check if number <= 0
+	// check if number <= 0   // is this necessary?
 	else if (num <= 0) { return false; }
 
 	// check if array -> this is to catch an array of 1 number, ex [10]
