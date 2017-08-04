@@ -14,7 +14,18 @@
  */
 
 function reverseInPlace(array) {
-
+    array = array.map((words) => {
+        return reverseChar(words);
+    });
+    return array;
+}
+function reverseChar (char) {
+    let temp = '';
+    for (let x = char.length - 1; x >= 0; x--) {
+        temp = temp + char[x];
+    }
+    char = temp;
+    return char;
 }
 
 module.exports = reverseInPlace;
