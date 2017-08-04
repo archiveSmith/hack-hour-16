@@ -11,8 +11,15 @@ function pow(base, power) {
   // }
   // return res
 
-  if (power === 1) { return base }
+  if (power === 0) { return 1 }
   return base * pow(base, power-1)
 }
 console.log(pow(3, 3))
 module.exports = pow;
+//  3^3 = 3 * 3 * 3;
+//  base stays the same
+// 3 ^ 0 = 1  --> base case;
+//   3 * pow(3, 3) -->
+//   3 * pow(3, 2) -->
+//   3 * pow(3, 1)
+//   3 * pow(3, 0) --> 3 * 1 = 3
