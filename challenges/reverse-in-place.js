@@ -17,6 +17,7 @@
 const char = ['a', 'b', 'c', 'd'];
 
 function reverseInPlace(array) {
+  if (array.length === 0) return [];
   for (let i = 0; i < array.length; i += 1) {
     array.splice(i, 0, array.pop());
   }
