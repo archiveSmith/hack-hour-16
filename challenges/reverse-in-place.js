@@ -1,4 +1,5 @@
-'use strict';
+
+
 /**
  * Write a function to reverse an array in place
  *
@@ -13,8 +14,14 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
+const char = ['a', 'b', 'c', 'd'];
 
+function reverseInPlace(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    array.splice(i, 0, array.pop());
+  }
+  return array;
 }
 
+// console.log(reverseInPlace(char));
 module.exports = reverseInPlace;
