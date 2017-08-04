@@ -14,12 +14,11 @@
 */
 
 function drawStairs(n) {
-  var x = "";
   if (1 <= n && n <= 100) {
     for (var i = 1; i <= n; i++) {
     console.log(" ".repeat(n - i) + "*".repeat(i));
     }
-}
+  }
 }
 
 
