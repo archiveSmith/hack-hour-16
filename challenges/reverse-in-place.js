@@ -18,7 +18,7 @@ function reverseInPlace(array) {
     // ########################
     // ### INPUT VALIDATION ###
     // ########################
-    if (!array) return undefined;
+    if (!array) return []];
     if (Array.isArray(array) === false) return undefined;
  
 

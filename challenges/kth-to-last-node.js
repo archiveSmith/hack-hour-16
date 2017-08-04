@@ -113,10 +113,10 @@ function kthToLastNode(k, head) {
   function errorMessage(string) {
     if (string) {
       console.log(string);
-      return null;
+      return undefined;
     }
     console.log("[Error] not a valid position in list");
-    return null;
+    return undefined;
   }
 } 
 
