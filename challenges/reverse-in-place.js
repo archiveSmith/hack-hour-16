@@ -15,8 +15,11 @@
 
 function reverseInPlace(array) {
 
+if(array.length === 0){
+    return [];
+}
 
-array = array.split('')
+//array = array.split('')
 i = 0;
 j = array.length - 1
 
@@ -30,6 +33,7 @@ i++
 j--
 }
 return array
+
 
 }
 
