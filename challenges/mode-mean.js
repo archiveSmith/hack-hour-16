@@ -11,12 +11,21 @@
 
 
 function modemean(array) {
+<<<<<<< HEAD
+    let args = Array.from(arguments);
+    
+    /// check for multiple parameters
+    if (args.length > 1) {
+        console.log("[ERROR]: modemean(array) requires an array of numbers [multiple params passed]");
+        return false;
+    }
 
     // catch the junk -> no param, not an array, empty array
     if (!array) { 
         console.log("[ERROR]: modemean(array) requires an array of numbers [no param]");
         return false;
-    } else if (Array.isArray(array) === false) {
+    }    
+    else if (Array.isArray(array) === false) {
         console.log("[ERROR]: modemean(array) requires an array of numbers [not an array]");
         return false;
     }
@@ -71,69 +80,71 @@ function modemean(array) {
     mean = Math.floor(sum / array.length);
 
     //// log the mean and mode for debugging
-    console.log("mean: " + mean);
-    console.log('mode: ' + mode);
+    // console.log("mean: " + mean);
+    // console.log('mode: ' + mode);
 
-    // if mean and mode are equal, return true
-    if (mean === mode) {
-        // console.log('return true');
-        return true;
-    }
-    // else, if mean != mode, return false
-    else {
-        // console.log('return false');
-        return false;
-    }
+    // if mean === mode, return true, else return false
+    if (mean === mode) { return true; }
+    else { return false; }
 }
 
 // ****************
 // ** TEST CASES **
 // ****************
 
-// // 5 = 5; true
-// let arr = [1,2,3,4,5,6,7,5,5,5,5,5,10,11,12];
-// console.log("------------------");
-// console.log(modemean(arr));
-// console.log("------------------");
+// 5 = 5; true
+let arr = [1,2,3,4,5,6,7,5,5,5,5,5,10,11,12];
+console.log("------------------");
+console.log(modemean(arr));
+console.log("------------------");
 
-// // 3 != 5; false
-// arr = [1,2,3,4,5,6];
-// console.log("------------------");
-// console.log(modemean(arr));
-// console.log("------------------");
+// 3 != 5; false
+arr = [1,2,3,4,5,6];
+console.log("------------------");
+console.log(modemean(arr));
+console.log("------------------");
 
-// // 3 != 6; false
-// arr = [6,5,4,3,2,1];
-// console.log("------------------");
-// console.log(modemean(arr));
-// console.log("------------------");
+// 3 != 6; false
+arr = [6,5,4,3,2,1];
+console.log("------------------");
+console.log(modemean(arr));
+console.log("------------------");
 
-// // ERROR
-// arr = [1, 2, 3, 4, 'hello'];
-// console.log("-------'hello'----------");
-// console.log(modemean(arr));
-// console.log("------------------");
+// ERROR
+arr = [1, 2, 3, 4, 'hello'];
+console.log("-------'hello'----------");
+console.log(modemean(arr));
+console.log("------------------");
 
-// // 2 != 4; false
-// arr = [1, 2, 3, 4, '4'];
-// console.log("-------'4'----------");
-// console.log(modemean(arr));
-// console.log("------------------");
+// 2 != 4; false
+arr = [1, 2, 3, 4, '4'];
+console.log("-------'4'----------");
+console.log(modemean(arr));
+console.log("------------------");
 
-// console.log("-------'()'----------");
-// console.log(modemean());
-// console.log("------------------");
+console.log("-------'()'----------");
+console.log(modemean());
+console.log("------------------");
 
-// console.log("-------'(null)'----------");
-// console.log(modemean(null));
-// console.log("------------------");
+console.log("-------'(null)'----------");
+console.log(modemean(null));
+console.log("------------------");
 
-// console.log("-------'([]])'----------");
-// console.log(modemean([]));
-// console.log("------------------");
+console.log("-------'([]])'----------");
+console.log(modemean([]));
+console.log("------------------");
 
-// console.log("-------'({})'----------");
-// console.log(modemean({}));
-// console.log("------------------");
+console.log("-------'({})'----------");
+console.log(modemean({}));
+console.log("------------------");
 
+console.log("-------'([1,2,3,4,5], [1,2,3,4,5])'----------");
+console.log(modemean([1,2,3,4,5], [1,2,3,4,5]));
+console.log("------------------");
+
+=======
+
+}
+
+>>>>>>> a0598932afffedeb7098cc55bd823627a768f994
 module.exports = modemean;
