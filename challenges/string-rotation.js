@@ -16,7 +16,41 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
+  if (s1.length !== s2.length) return false;
+
+  // let stringClone = [];
+  // let arr1 = s1.split('');
+  // let arr2 = s2.split('');
+  //
+  // for (let i = 0; i < arr1.length; i++) {
+  //   let temp = arr2.indexOf(arr1[i])
+  //   if (temp > -1) {
+  //     stringClone.push(s1[i])
+  //   }
+  //   arr2.splice(temp, 1)
+  // }
+  // return stringClone.join('') === s1
+
+  let arr1 = s1.split('');
+  let arr2 = s2.split('');
+  let start = arr1.indexOf(arr2[0])
+
+  let sub = [arr2[0]];
+  let sub2 = [];
+  for (let i = 1; i < arr2.length; i++) {
+    if (arr2[i] === arr1[start + i]) {
+      sub.push(arr2[i])
+    } else {
+      sub2.push(arr2[i])
+    }
+  }
+
+  if (sub.concat(sub2).join('') === s1 || sub2.concat(sub).join('') === s1) {
+    return true;
+  } else {
+    return false;
+  }
 
 }
-
+console.log(stringRotation('hello', "asd"))
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
