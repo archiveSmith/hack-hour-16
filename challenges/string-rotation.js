@@ -16,7 +16,26 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
-
+  if(typeof(s1) !== "string"||typeof(s2) !== "string"){return "not a string"}
+	let str1 = s1.match(/[a-z]/gi)
+  let str2 = s2.split("")
+  let temp = []
+  let answer;
+  for(let i = 0; i < str1.length; i++){
+    if(str2.indexOf(str1[i]) !== -1){
+      temp.push(str1[i])
+      if(temp.length === str2.length){break}
+     }
+  }
+  let tempIndex = str2.indexOf(temp[0])
+  answer = str2.slice(tempIndex)
+  for(let j = 0; j < tempIndex; j++){
+    answer.push(str2[j])
+  }
+  temp = temp.join("")
+  answer = answer.join("")
+ 	if(isSubstring(temp,answer)){return true}
+  return false
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
