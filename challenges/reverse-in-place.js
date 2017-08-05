@@ -15,7 +15,7 @@
 
 function reverseInPlace(array) {
 	var placeholder = [];
-	
+
 	if (array.length === 0 || array === undefined) {
 		return [];
 	}
@@ -32,3 +32,5 @@ function reverseInPlace(array) {
 }
 
 module.exports = reverseInPlace;
+
+
