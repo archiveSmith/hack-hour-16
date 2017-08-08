@@ -25,7 +25,34 @@
  */
 
 function balancedParens(input){
+  if(typeof(input) !== "string"){return "not a string"}
+  let strArr = input.match(/[^a-z0-9 ]/gi)
+  if(strArr[0]===")"||strArr[0]==="}"||strArr[0]==="]"){return false}
+  
+  let parentheses = "[]{}()",
+    stack = [],
+    i,
+    c; 
 
+  for (i = 0; c = strArr[i++];){
+    var position = parentheses.indexOf(c)
+    if(position%2===0){
+      stack = strArr.slice(i-1,strArr.length-i+1)
+      console.log(stack)
+      if(parentheses.indexOf(stack[0]) === parentheses.indexOf(stack[stack.length-1])){
+        return true
+      }
+    }
+    else{return false}
+    if(stack[i-1]==="(" && stack[stack.length-i+1]){console.log("hello")}
+    
+  
+//     console.log(strArr)
+//     console.log(stack)
+    }
+  
+  
+	return false
 }
 
 module.exports = balancedParens;
