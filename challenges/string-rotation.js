@@ -12,6 +12,7 @@
  */
 
 function isSubstring(s1, s2) {
+<<<<<<< HEAD
   //rotate through s2 and check against s1 on each rotation, if s1 === s2 return true else return false at array.length
     if (typeof s1 !== 'string' || typeof s1 !== 'string') return 'invalid input';
   s1 = s1.split('');
@@ -30,6 +31,13 @@ function isSubstring(s1, s2) {
 
 function stringRotation(s1, s2) {
   return isSubstring(s1,s2);
+=======
+  return s1.indexOf(s2) >= 0;
+}
+
+function stringRotation(s1, s2) {
+
+>>>>>>> 91b31918c5a052210d880b8dd0eb8a18d4d8ce66
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
