@@ -16,7 +16,15 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
-
+  let reverseS1 = s1.split('').reverse().join('');
+  console.log(reverseS1);
+  if (reverseS1 === s2) {
+    return false;
+  }
+  
 }
+
+
+console.log(stringRotation('hello', 'olleh'));
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
