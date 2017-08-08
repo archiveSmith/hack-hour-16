@@ -50,4 +50,6 @@
    }
  }
 
+ console.log(modemean([1, 5, 5, 10]));
+
 module.exports = modemean;
