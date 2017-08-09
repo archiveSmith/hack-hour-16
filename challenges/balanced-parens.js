@@ -40,16 +40,18 @@ for(var k = 0; k < inputAry.length; k++){
 
 input = newInput;
 
+//OPEN CASE
+if(input[0] === ')' || input[0] === ']' || input[0] === '}'){
+  return false
+}
+
 //EVEN LENGTH
 if (input.length % 2 !== 0){
   console.log('hello')
   return false
 }
 
-//OPEN CASE
-if(input[0] === ')' && input[0] === ']' || input[0] === '}'){
-  return false
-}
+
 
 //SYMMETRICAL CASE
 match = 0;
@@ -99,7 +101,6 @@ if(count === input.length/2){
 } else {
   return false
 }
-
 
 
 }
