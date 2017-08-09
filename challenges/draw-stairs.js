@@ -1,38 +1,9 @@
-/* Write a function that console logs a staircase of any given height where 1 <= N <= 100.
- The staircase must climb up from left to right. The last line should only consist of asterisks,
- without any leading/trailing spaces.
- 
- For example:     
- drawStairs(6) ->          
-     *
-    **
-   ***
-  ****
- *****
-******
-/* Write a function that console logs a staircase of any given height where 1 <= N <= 100.
- The staircase must climb up from left to right. The last line should only consist of asterisks,
- without any leading/trailing spaces.
- 
- For example:     
- drawStairs(6) ->          
-     *
-    **
-   ***
-  ****
- *****
-******
-
-*/
-
-
-function drawStairs(n) {
- var spaces = ""
- var astricks = ""
- for(var i = 1; i <= n; i++){
-   spaces = " ".repeat(n-i)
-   astricks = "*".repeat(i)
-   console.log(spaces+astricks)
- } 
+function DrawStairs(count = 0, space = "     ", ast = "*"){
+  if(count === 6){return;}
+  space = count === 0 ? space : space.slice(count)
+  ast = count === 0 ? ast : ast + "*"
+  console.log(space + ast)
+  count++
+  DrawStairs(count,space,ast)
 }
-module.exports = drawStairs;
+DrawStairs()

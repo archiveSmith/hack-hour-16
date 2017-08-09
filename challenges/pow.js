@@ -2,16 +2,30 @@
  * Use recursion!
  */
 
-var temp;
-function pow(base, power, count = 1) {
+
+//MY REFRACTORED SOLUTION
+function pow(base, power, temp) {
+  if(power === 0){return 1}
   if(temp === undefined){temp = base}
-if(count !== power){
+if(power > 1){
   base = base * temp
-  count++
+  power--
 }else {
   return base
 }
-return pow(base,power,count)
+return pow(base,power,temp)
 }
+
+//MY OLD SOLUTION
+// function pow(base, power, count = 1, temp) {
+//   if(temp === undefined){temp = base}
+// if(count !== power){
+//   base = base * temp
+//   count++
+// }else {
+//   return base
+// }
+// return pow(base,power,count, temp)
+// }
 
 module.exports = pow;
