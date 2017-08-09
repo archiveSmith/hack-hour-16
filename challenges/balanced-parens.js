@@ -26,6 +26,20 @@
 
 function balancedParens(input){
 
+inputAry = input.split('')
+
+newInput = [];
+
+for(var k = 0; k < inputAry.length; k++){
+  if(inputAry[k] === '(' || input[k] === '[' || input[k] === '{' || input[k] === ')' || input[k] === ']' || input[k] === '}'){
+   
+   newInput.push(input[k])
+    
+  }
+}
+
+input = newInput;
+
 //EVEN LENGTH
 if (input.length % 2 !== 0){
   console.log('hello')
@@ -85,6 +99,7 @@ if(count === input.length/2){
 } else {
   return false
 }
+
 
 
 }
