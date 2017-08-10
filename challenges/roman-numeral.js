@@ -17,51 +17,17 @@
  * 
  */
 
+
+
 function romanNumeral(n) {
 
   if (Number.isNaN(n)) return undefined;
 
   let romanString = '';
   let remainder = n;
+  let romans = [1000, 'M', 900, 'CM', 500, 'D', 400, 'CD', 100, 'C', 90, 'XC', 50, 'L', 40, 'XL', 10, 'X', 9, 'IX', 5, 'V', 4, 'IV', 1, 'I'];
 
-  // check if divisible by 1000
-  checkIfDivisible(1000, 'M');
-
-  // check if divisibly by 900
-  checkIfDivisible(900, 'CM');
-
-  // check if divisible by 500
-  checkIfDivisible(500, 'D');
-
-  // check if divisible by 400
-  checkIfDivisible(400, 'CD');
-
-  // check if divisible by 100
-  checkIfDivisible(100, 'C');
-
-  // check if divisible by 90
-  checkIfDivisible(90, 'XC');
-
-  // check if divisible by 50
-    checkIfDivisible(50, 'L');
-
-  // check if divisible by 40
-    checkIfDivisible(40, 'XL');
-
-  // check if divisible by 10
-    checkIfDivisible(10, 'X');
-
-  // check if divisible by 9
-    checkIfDivisible(9, 'IX');
-
-  // check if divisible by 5
-    checkIfDivisible(5, 'V');
-
-  // check if divisible by 4
-    checkIfDivisible(4, 'IV');
-
-  // check if divisible by 1
-    checkIfDivisible(1, 'I');
+  for (let i = 0; i < romans.length; i += 2) { checkIfDivisible(romans[i], romans[i+1]); }
 
   return romanString;
 
@@ -73,10 +39,10 @@ function romanNumeral(n) {
 
 }
 
-// console.log('1', romanNumeral(1));
-// console.log('5', romanNumeral(5));
-// console.log('6', romanNumeral(6));
-// console.log('103', romanNumeral(103));
-// console.log('3009', romanNumeral(3009));
+console.log('1', romanNumeral(1));
+console.log('5', romanNumeral(5));
+console.log('6', romanNumeral(6));
+console.log('103', romanNumeral(103));
+console.log('3009', romanNumeral(3009));
 
 module.exports = romanNumeral;
