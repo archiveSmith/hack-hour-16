@@ -18,6 +18,7 @@
  */
 
 function romanNumeral(n) {
+<<<<<<< HEAD
     let nDictionary = {
         1 : 'I',
         4 : 'IV',
@@ -48,6 +49,9 @@ function romanNumeral(n) {
               }
             }
     }
+=======
+
+>>>>>>> cb07cf3cf9fd7c9a7732dbc4870cdd944f8f687f
 }
 
 module.exports = romanNumeral;
