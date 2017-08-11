@@ -25,7 +25,20 @@
  */
 
 function balancedParens(input){
+  let stack = [];
+  breakets = {
+    '{': '}',
+    '[': ']',
+    '(': ')'
+  }
 
+  for (let i = 0; i < input.length; i++) {
+    if (breakets.hasOwnProptery(input[i])) stack.push(breakets[input[i]]);
+    if ([')','}', ']'].includes(input[i]) && stack.pop() !== string[i]) return false;
+  }
+  return stack.length === 0;
 }
+
+console.log(balancedParens('()'));
 
 module.exports = balancedParens;

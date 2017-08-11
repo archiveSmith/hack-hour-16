@@ -11,12 +11,17 @@
  *              stringRotation("hello", "ollhe") -> false (not a rotation, just an anagram)
  */
 
-function isSubstring(s1, s2) {
-  return s1.indexOf(s2) >= 0;
+function isSubstring(s1, s2, len) {
+  return s1.includes(s2) && s2.length === len;
 }
 
-function stringRotation(s1, s2) {
-
+function stringRotation(s1, s2, len) {
+  const cat = s1 + s2;
+  let lenght = s2.length
+  return isSubstring(cat, s2);
 }
+
+
+console.log(stringRotation('hello', 'he'))
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
