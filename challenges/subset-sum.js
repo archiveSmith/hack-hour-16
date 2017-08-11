@@ -10,6 +10,24 @@
 
 function subsetSum(array, target) {
 
+    let store = 0;
+
+    for (let x = 0; x < array.length / 2; x++) {
+        if (array[x] < (target / 2) + 1 && store + array[x] <= target) {
+            store += array[x];
+        }
+    }
+
+    for (let y = array.length / 2; y < array.length; y++) {
+        if (array[y] < (target / 2) + 1 && store + array[y] <= target) {
+            store += array[y];
+        }
+    }
+
+    return store === target
+
 }
+
+console.log(subsetSum([3, 34, 4, 12, 5, 12], 32));
 
 module.exports = subsetSum;
