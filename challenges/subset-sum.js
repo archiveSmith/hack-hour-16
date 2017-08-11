@@ -9,7 +9,25 @@
  */
 
 function subsetSum(array, target) {
-
-}
+    //   console.log(array, "this new array")
+    //   console.log(target, "thisnewtarget")
+      array = array.sort(function(a,b){return b-a})
+      let subSet;
+      for(let j = 0; j < array.length; j++){
+        subSet = target - array[j]
+        if(array.indexOf(subSet)!== -1){return true}
+      }
+      let targetStore = target
+        for(let i = 0; i < array.length; i++){
+        if(target < array[i]){array.shift()}
+        else{target -= array.shift()}
+    //     console.log(array)
+    //     console.log(target)
+        
+          if(target > 0){return subsetSum(array,target)}
+        
+      }
+      return false
+    }
 
 module.exports = subsetSum;
