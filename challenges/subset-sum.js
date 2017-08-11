@@ -9,6 +9,8 @@
  */
 
 function subsetSum(array, target) {
+  if (array.length === 0 || isNaN(target)) return false;
+
   let combinations = [[]];
   //build all subsets of array
   for (let i = 0; i < array.length; i++) {
