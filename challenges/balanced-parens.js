@@ -38,6 +38,7 @@ function balancedParens(input){
       return false;
     }
   }
+  return stack.length === 0;
 }
 
 
