@@ -23,5 +23,23 @@ function reverseInPlace(array) {
     }
     return array;
 }
+// slower
+/*
+function reverseInPlace(array) {
+    if(!Array.isArray(array)) return 'invalid input';
+
+    let left = null;
+    let right = null;
+    const leangth = array.length;
+
+    for(let i = array.length-2; i >= 0; i--){
+        array.push(array[i])
+        array.splice(i, 1)
+    }
+    return array;
+}
+ */
+
+
 
 module.exports = reverseInPlace;
