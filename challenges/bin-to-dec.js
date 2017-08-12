@@ -15,8 +15,6 @@
 
 function binToDec(binary) {
 
-parseInt(binary, 10)
-
 return parseInt(binary, 2)
 
 
