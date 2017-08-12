@@ -15,6 +15,21 @@
 
 function binToDec(binary) {
 
-}
+  let sum = 0;
+  for (let i = binary.length-1; i >= 0; i--) {
+    if (binary[i] === '1') {
+      sum += Math.pow(2, binary.length-1-i)
+      // console.log('iterating sum: ', sum)
+      // console.log('index: ', i)
+      // console.log('')
+    }
+  }
+  return sum
 
+}
+console.log(binToDec('0') == 0)
+console.log(binToDec('1101') == 13)
+console.log(binToDec('100') == 4)
+console.log(binToDec('0101') == 5)
+console.log(binToDec('101') == 5)
 module.exports = binToDec;
