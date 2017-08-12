@@ -11,6 +11,8 @@
 function subsetSum(array, target) {
     //   console.log(array, "this new array")
     //   console.log(target, "thisnewtarget")
+      if(array.length===0){return false}
+      if(array.length === 1 && array[0] === target){return true}
       array = array.sort(function(a,b){return b-a})
       let subSet;
       for(let j = 0; j < array.length; j++){
