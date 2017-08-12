@@ -27,7 +27,7 @@ function binToDec(binary) {
         if(binary[i] === '1'){answer+=binNum[i]}
       }
       return answer
-    }
+    } 
     // console.log(binToDec('010110110')===parseInt('010110110',2))
 
 module.exports = binToDec;
