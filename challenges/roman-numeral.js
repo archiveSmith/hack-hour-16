@@ -19,6 +19,7 @@
 
 function romanNumeral(n) {
 
+<<<<<<< HEAD
 romanNum = {
     1 : 'I',
     4 : 'IV',
@@ -58,6 +59,8 @@ romanNum = {
   
 
   }
+=======
+>>>>>>> 20bf7983951a9f5446a0d4d1433eebcf6573c470
 }
 
 module.exports = romanNumeral;
