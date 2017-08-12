@@ -12,6 +12,7 @@
  * Extension:
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
+//
 
 function binToDec(binary) {
       // start at right n = 1 each number to the left is multiplied by 2 unless element = 0
