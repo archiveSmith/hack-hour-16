@@ -17,7 +17,6 @@ function isSubstring(s1, s2) {
 
 function stringRotation(s1, s2) {
 
-<<<<<<< HEAD
   // if strings are different length, return false
   if (s1.length != s2.length) return false;
   // if strings are same, return true
@@ -69,8 +68,4 @@ function stringRotation(s1, s2) {
 // console.log("false: ", stringRotation('hello', 'ollhe'));
 
 
-=======
-}
-
->>>>>>> 91b31918c5a052210d880b8dd0eb8a18d4d8ce66
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
