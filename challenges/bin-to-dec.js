@@ -15,7 +15,24 @@
 
 function binToDec(binary) {
 
-return parseInt(binary, 2)
+
+    binaryAry = binary.split('')
+
+    console.log(binaryAry.length)
+    sum = 0;
+
+    j = binaryAry.length - 1
+
+    for (var i = 0; i < binaryAry.length; i++) {
+
+        console.log('binary', binaryAry[i])
+        console.log('power', Math.pow(2, j))
+        sum = sum + binaryAry[i] * Math.pow(2, j)
+        j--
+    }
+
+
+    return sum
 
 
 }
