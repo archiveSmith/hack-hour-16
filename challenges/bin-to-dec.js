@@ -16,6 +16,7 @@
 function binToDec(binary) {
 
 //return parseInt(binary, 2)
+//blah blah blah
     binaryAry = binary.split('')
 
     console.log(binaryAry.length)
