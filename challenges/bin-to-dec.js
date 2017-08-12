@@ -14,7 +14,20 @@
  */
 
 function binToDec(binary) {
+  let sum =  0;
+  let space = 1
 
+  for(let i = binary.length; i >= 0; i--) {
+    if (binary[i] === '0') {
+      space *= 2;
+    } else if (binary[i] === '1') {
+      sum += space;
+      space *= 2;
+    }
+  }
+  return sum;
 }
+console.log(binToDec('100'))
+
 
 module.exports = binToDec;
