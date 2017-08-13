@@ -91,12 +91,22 @@ function balancedParens(input) {
 
 
         }
+        if(input[i] === "{" || input[i] === "[" || input[i] === "(") {
+            if(input[i+1] === "}" || input[i+1] === "]" || input[i+1] === ")") {
+                return false;
+            }
+        }
 
 
         if (input[i] === "}" || input[i] === "]" || input[i] === ")") {
             return false;
         }
     }
+      if(countofcurly === countofcurly2 &&countofbracket === countofbracket2 && countofparens === countofparens2) {
+          return true;
+      } else {
+          return false;
+      }
 
 }
 
