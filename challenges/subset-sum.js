@@ -17,27 +17,18 @@ function subsetSum(array, target) {
     var sum = 0;
 
     for (var i = 0; i < array.length; i++) {
-        //sum of whole array
         sum = sum + array[i]
     }
-    console.log(sum)
 
     while (sum != target && array.length !== 0) {
-        //sum of whole array - target
 
-        console.log(array)
         diffSumTarget = sum - target;
-        console.log('diffSumTarget', diffSumTarget)
 
-        //find the number in the num array closest to diffSumTarget
-        //num closestTodiffSumTarget = minimum difference detween number in the array and diffSumTarget
         var closestTodiffSumTarget = array[0];
         for (var j = 1; j < array.length; j++) {
             if (Math.abs(diffSumTarget - array[j]) < Math.abs(diffSumTarget - closestTodiffSumTarget))
                 closestTodiffSumTarget = array[j]
         }
-
-        console.log('closest', closestTodiffSumTarget)
 
         index = array.indexOf(closestTodiffSumTarget);
 
@@ -45,9 +36,7 @@ function subsetSum(array, target) {
             array.splice(index, 1);
         }
 
-        //subtract total sum to closestTodiffSumTarget
         sum = sum - closestTodiffSumTarget
-        console.log('sum', sum)
         if (sum === target) {
             return true
         }
