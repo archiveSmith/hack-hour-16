@@ -11,7 +11,6 @@
 
 
 function modemean(array) {
-<<<<<<< HEAD
     let args = Array.from(arguments);
     
     /// check for multiple parameters
@@ -142,9 +141,4 @@ console.log("-------'([1,2,3,4,5], [1,2,3,4,5])'----------");
 console.log(modemean([1,2,3,4,5], [1,2,3,4,5]));
 console.log("------------------");
 
-=======
-
-}
-
->>>>>>> a0598932afffedeb7098cc55bd823627a768f994
 module.exports = modemean;

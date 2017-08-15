@@ -27,9 +27,9 @@
 function balancedParens(input){
 
 	// the pattern to test
-	let brackets = /[\{\}\(\)\[\]]/;
-	let opening = /[\{\(\[]/;
-	let closing = /[\}\)\]]/;
+	// let brackets = /[\{\}\(\)\[\]]/;
+	// let opening = /[\{\(\[]/;
+	// let closing = /[\}\)\]]/;
 
 	// filter out all chars we are not interested in
 	let filtered = input.split('').filter(function(char) {
