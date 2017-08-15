@@ -8,7 +8,20 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+  if (str === '') return false;
+  const strings = str.toUpperCase().replace(/[^a-zA-Z]/g, ' ');
+  const words = strings.split(' ').filter(word => word !== '');
+  const stack = [];
+  for (let i = 0; i < words.length; i += 1) {
+    if (stack[stack.length - 1] === words[i].split('').reverse().join('')) {
+      stack.pop();
+    } else {
+      stack.push(words[i]);
+    }
+  }
+  return stack.length === 0;
 }
+
+console.log(matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw'));
 
 module.exports = matchWord;
