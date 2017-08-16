@@ -9,6 +9,56 @@
 
 function matchWord(str) {
 
+    if (str.length === 0) {
+        return true
+    }
+
+    strAry = str.toLowerCase().split('');
+
+    alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+
+    justLetters = [];
+    var stacks = [];
+
+    for (var i = 0; i < strAry.length; i++) {
+        if (alpha.indexOf(strAry[i]) !== -1) {
+            justLetters.push(strAry[i])
+        } else {
+            justLetters.push(' ')
+        }
+    }
+
+
+    multispaces = justLetters.join('').trim()
+
+    words = multispaces.split(/\s*\b\s*/)
+
+    console.log(words)
+
+
+    stacks.push(words[0])
+
+    for (var k = 1; k < words.length; k++) {
+        console.log(words[k], stacks[stacks.length - 1])
+        if (words[k] === stacks[stacks.length - 1].split('').reverse().join('')) {
+            stacks.pop()
+        } else {
+            stacks.push(words[k])
+        }
+
+    }
+
+
+
+
+    if (stacks.length === 0) {
+        return true
+    } else {
+        return false
+    }
+
+
 }
 
 module.exports = matchWord;
