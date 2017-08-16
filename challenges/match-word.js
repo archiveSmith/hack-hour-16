@@ -8,7 +8,16 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+  let arr = str.split('');
+  let array = [];
 
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].match(/^[a-zA-Z]*$/)) {
+      array.push(arr[i]);
+    }
+  }
+  console.log(array);
 }
+console.log(matchWord('__END_DNE-----'));
 
 module.exports = matchWord;
