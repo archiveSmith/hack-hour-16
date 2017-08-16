@@ -1,14 +1,33 @@
-// Some languages have "if" statements that are closed by "fi" instead of curly brackets. Or they close a "case" with "esac", i.e. the same keyword backwards. for this problem we'll check that all words in a string are "closed". Write a function that takes a string and returns true if every word is closed by its backwards counterpart. Words must be separated by space or punctuation.
-
-// matchWord('__END_DNE-----');  -> true
-// matchWord('__ENDDNE__');  -> false       (not separated by a space)
-// matchWord('IF()()fi[]');  -> true        (should be case-insensitive)
-// matchWord('for__if__rof__fi');  -> false     not properly closed. like ( [) ] 
-// matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
-// matchWord('');  -> true
-
 function matchWord(str) {
+    let example = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '}', '{', '[', ']', '\\', '|', ':', ';', '<', '>', ',', '.', '`', '~', ' '];
 
+    let lowcase = str.toLowerCase();
+    let leSplit = lowcase.split('');
+
+    let stringTest = '';
+    let usCompare = [];
+
+    leSplit.forEach((x) => {
+        if (example.includes(x) === false) {
+            stringTest += x;
+            if (x === leSplit[leSplit.length - 1]) {
+                usCompare.push(stringTest);
+            }
+        } else if (example.includes(x) === true && stringTest !== '') {
+            usCompare.push(stringTest);
+            stringTest = '';
+        }
+    });
+
+    if (usCompare.length === 1) return false;
+
+    usCompare.forEach((y) => {
+        if (!usCompare.includes(y.split('').reverse().join(''))) {
+            return false;
+        }
+    })
+
+    return true;
 }
 
 module.exports = matchWord;
