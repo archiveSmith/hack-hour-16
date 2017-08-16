@@ -14,7 +14,22 @@
  */
 
 function binToDec(binary) {
-
+  let trimmedBinary = binary.substring(binary.indexOf('1'));
+  let sum = 0;
+  for (let i = trimmedBinary.length - 2; i >= 0; i--) {
+    if (trimmedBinary[i].indexOf('1') == 0) {
+      let current = Math.pow(2, i+1);
+      sum += current;
+    } else {
+      return sum;
+    }
+  }
+  if (trimmedBinary[trimmedBinary.length-1] == "1") {
+    return sum + 1;
+  }
+  return sum;
 }
+
+console.log(binToDec('111101'));
 
 module.exports = binToDec;

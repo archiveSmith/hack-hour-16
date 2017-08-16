@@ -25,7 +25,21 @@
  */
 
 function balancedParens(input){
+  var temp = [];
+  var open = { '{': '}', '[': ']', '(': ')' }
+  var close = { '}': true, ']': true, ')': true };
 
+  (let i = 0; i < input.length; i++) {
+    var current = input[i];
+    if (open[current]) {
+      temp.push(current);
+    } else if (close[current]) {
+      if (open[stack.pop()]) !== current)
+      return false;
+    }
+  }
+  return stack.length === 0;
 }
+
 
 module.exports = balancedParens;

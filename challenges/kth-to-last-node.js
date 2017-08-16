@@ -22,7 +22,52 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  if (!head || typeof head !== 'object') {
+    return undefined;
+  }
+  if (k <= 0) {
+    return undefined;
+  }
+  let currHead = head;
+  let length = 0;
+  let count = 0;
+  let result;
+
+  while (currHead) {
+    currHead = currHead.next;
+    length++;
+  }
+  while (count < length - k) {
+    head = head.next;
+    result = head.value;
+    count++;
+  }
+  return result;
 
 }
 
-module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+// LinkedList.prototype.push = function(value) {
+//   let node = new Node(value);
+//   if (!this.head) {
+//     this.head = node;
+//     this.tail = node;
+//   } else {
+//     this.tail.next = node;
+//     this.tail = this.tail.next
+//   }
+// }
+//
+// let user1 = new LinkedList();
+//
+// user1.push('A');
+// user1.push('B');
+// user1.push('C');
+// user1.push('D');
+// user1.push('E');
+// console.log(user1);
+//
+// console.log(user1.head)
+
+// function kthToLastNode(k, head) {
+//
+// }
