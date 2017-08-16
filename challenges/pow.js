@@ -3,13 +3,22 @@
  */
 
 function pow(base, power) {
-  if (power === 0)
- {
-   return 1;
- }
- return base * pow(base, power - 1);
+  var single = base;
+  if (power === 0) {
+    return result;
+  }
+  result =
+  while (power > 0) {
+
+  }
+
+return (base, power - 1)
 }
 
 module.exports = pow;
 
-console.log(5^5);
+5^5
+
+5 * 5 * 5 * 5 * 5
+
+//power is the number of times that base will multiply by each other

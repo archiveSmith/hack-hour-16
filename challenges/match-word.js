@@ -3,12 +3,20 @@
 // matchWord('__END_DNE-----');  -> true
 // matchWord('__ENDDNE__');  -> false       (not separated by a space)
 // matchWord('IF()()fi[]');  -> true        (should be case-insensitive)
-// matchWord('for__if__rof__fi');  -> false     not properly closed. like ( [) ] 
+// matchWord('for__if__rof__fi');  -> false     not properly closed. like ( [) ]
 // matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+  // let words = [];
+  // for (let i = 0; i < str.length; i++) {
+  //
+  // }
 }
 
 module.exports = matchWord;
+
+
+var string = 'IF()()fi[]';
+string = string.replace(/[^a-zA-Z]/g, "");
+console.log(string);
