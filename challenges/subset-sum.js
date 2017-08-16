@@ -9,6 +9,7 @@
  */
 
 function subsetSum(array, target) {
+<<<<<<< HEAD
     // recurssion base case if i > array.length || sum === target
     // check if total array == target
     // remove first element then second and so on adding each back in then remove next
@@ -17,6 +18,9 @@ function subsetSum(array, target) {
     // base case is 0 for true or end of array for false
 
     // perhapse use slice to remove numbers in the middle
+=======
+
+>>>>>>> 214a70737090c1c96eaccac86fd7f90582adbd23
 }
 
 module.exports = subsetSum;

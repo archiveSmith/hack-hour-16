@@ -13,6 +13,7 @@
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
 
+<<<<<<< HEAD
 
 function binToDec(binary) {
       // start at right n = 1 each number to the left is multiplied by 2 unless element = 0
@@ -28,5 +29,10 @@ function binToDec(binary) {
   return decimal;
 }
 
+=======
+function binToDec(binary) {
+
+}
+>>>>>>> 214a70737090c1c96eaccac86fd7f90582adbd23
 
 module.exports = binToDec;
