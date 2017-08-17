@@ -3,11 +3,12 @@
  */
 
 function highestProduct(array) {
-  let highestNum;
-  for (let i = 0; i < array.length; i++) {
-    for (let j = i + 1; j < array.length; j++) {
-      if (!highestNum) highestNum = array[i] * array[j];
-      if (array[i] * array[j] > highestNum) highestNum = array[i] * array[j];
+  const sortedArr = array.sort().reverse();
+  let highestNum = sortedArr[0] * sortedArr[1] * sortedArr[2];
+  const withNeg = sortedArr[0] * sortedArr[sortedArr.length - 1] * sortedArr[sortedArr.length - 2];
+  if (sortedArr[sortedArr.length - 1] < 0 && sortedArr[sortedArr.length - 2] < 0) {
+    if (highestNum < withNeg) {
+      highestNum = sortedArr[0] * sortedArr[sortedArr.length - 1] * sortedArr[sortedArr.length - 2];
     }
   }
   return highestNum;
