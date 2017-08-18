@@ -30,7 +30,14 @@ function highestProduct(array) {
   }, 0);
 }
 
+/*
+I did this a stupid way. This is way easier!!!
 
+1. Sort the array
+2. Multiply left most 3 numbers
+3. Multiply first two and last one number
+4. Compare the two.
+*/
 
 
 module.exports = highestProduct;
