@@ -8,9 +8,9 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-  let arr = str.toLowerCase().split('');
+  const arr = str.toLowerCase().split('');
   const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-  let holder = [];
+  const holder = [];
   let filteredArr = arr.map((char) => {
     if (alphabet.indexOf(char) === -1) char = '!';
     return char;
@@ -19,7 +19,7 @@ function matchWord(str) {
     if (el !== '') return el;
   });
   for (let i = 0; i < filteredArr.length; i++) {
-    if (filteredArr[i] === holder[holder.length-1]) holder.pop();
+    if (filteredArr[i] === holder[holder.length - 1]) holder.pop();
     else holder.push(filteredArr[i].split('').reverse().join(''));
   }
   return holder.length === 0;
