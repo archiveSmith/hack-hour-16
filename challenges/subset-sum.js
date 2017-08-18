@@ -9,27 +9,18 @@
  */
 
 function subsetSum(array, target) {
-    //   console.log(array, "this new array")
-    //   console.log(target, "thisnewtarget")
-      if(array.length===0){return false}
-      if(array.length === 1 && array[0] === target){return true}
-      array = array.sort(function(a,b){return b-a})
-      let subSet;
-      for(let j = 0; j < array.length; j++){
-        subSet = target - array[j]
-        if(array.indexOf(subSet)!== -1){return true}
-      }
-      let targetStore = target
-        for(let i = 0; i < array.length; i++){
-        if(target < array[i]){array.shift()}
-        else{target -= array.shift()}
-    //     console.log(array)
-    //     console.log(target)
-        
-          if(target > 0){return subsetSum(array,target)}
-        
-      }
-      return false
-    }
+  for (var i = 0; i < array.length; i++) {
+      if (array[i] === target) {
+        return true;
+      };
+      else if (array[i] < target) {
+        var newArray = array.slice(i+1);
+        if (subsetSum(newArray, target - array[i])) {
+            return true;
+        };
+      };
+  };
+    return false;
+};
 
 module.exports = subsetSum;
