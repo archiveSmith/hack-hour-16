@@ -35,36 +35,36 @@ function balancedParens(input){
   let rightSide;
   let rightBrack;
   let rightCurly;
-  input.split('').forEach(function(char) {
-
-   if (char === '(' || char === ')') {
-     if (rightSide === undefined && char === '(') rightSide = true;
-     else if (rightSide === undefined && char === ')') rightSide = false;
-     counter++ ;
-     if(char === ')') {
-       if(counter2 % 2 !== 0 || counter3 % 2 !== 0) rightSide = false;
-     }
-   }
-   else if (char === '[' || char === ']') {
-     if (rightBrack === undefined && char === '[') rightBrack = true;
-     if (rightBrack === undefined && char === ']') rightBrack = false;
-     counter2++;
-     if(char === ']') {
-       if(counter % 2 !== 0 || counter3 % 2 !== 0) rightBrack = false;
-     }
-   }
-   else if (char === '{' || char === '}') {
-     if (rightCurly === undefined && char === '{') rightCurly = true;
-     else if (rightCurly === undefined && char === '}') rightCurly = false;
-     counter3++;
-     if(char === '}') {
-       if(counter % 2 !== 0 || counter2 % 2 !== 0) rightCurly = false;
-     }}
-   });
-   if (!rightSide || !rightBrack || !rightCurly) return false;
-   if (counter % 2 !== 0 || counter2 % 2 !== 0 || counter3 % 2 !== 0) return false;
-   return true;
- }
+  input.split('').forEach((char) => {
+    if (char === '(' || char === ')') {
+      if (rightSide === undefined && char === '(') rightSide = true;
+      else if (rightSide === undefined && char === ')') rightSide = false;
+      counter++;
+      if (char === ')') {
+        if (counter2 % 2 !== 0 || counter3 % 2 !== 0) rightSide = false;
+      }
+    }
+    else if (char === '[' || char === ']') {
+      if (rightBrack === undefined && char === '[') rightBrack = true;
+      if (rightBrack === undefined && char === ']') rightBrack = false;
+      counter2++;
+      if (char === ']') {
+        if (counter % 2 !== 0 || counter3 % 2 !== 0) rightBrack = false;
+      }
+    }
+    else if (char === '{' || char === '}') {
+      if (rightCurly === undefined && char === '{') rightCurly = true;
+      else if (rightCurly === undefined && char === '}') rightCurly = false;
+      counter3++;
+      if (char === '}') {
+        if (counter % 2 !== 0 || counter2 % 2 !== 0) rightCurly = false;
+      }
+    }
+  });
+  if (!rightSide || !rightBrack || !rightCurly) return false;
+  if (counter % 2 !== 0 || counter2 % 2 !== 0 || counter3 % 2 !== 0) return false;
+  return true;
+}
 
  /////////////////////////////////
  ////////// Solution 2 //////////
