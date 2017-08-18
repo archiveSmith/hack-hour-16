@@ -23,7 +23,7 @@ function matchWord(str) {
 
   let wordsArr = [];
   str = str.toLowerCase().split('');
-  let letters = /[a-z]/;
+  const letters = /[a-z]/;
   let word = '';
   let counter = 0;
  
@@ -58,3 +58,29 @@ function matchWord(str) {
 // console.log('false:', matchWord('for__if__rof__fi') === true);
 
 module.exports = matchWord;
+
+
+
+///// APPROACH
+  // check for empty string
+  // make an array of words
+  // convert to lower case
+  // split it at non [a-z] chars
+  // init stack as empty arr
+  // check if word arr length is uneven -> something doesnt have a pair, return false
+  // check if last item in stack is === to reversed of current value,
+    // if yes, pop it off the stack,
+    // else add to stack
+
+  if (str === '' ) return true;
+  const wordArr = str.toLowerCase().split(/[^a-z]+/);   // this will split the array at all non a-z characters, only a-z's will be in the array (^ === not operator in regex
+  if (wordArr.length % 2 === 1) return false;
+  const stack = [];
+  for (let i = 0; i < wordArr.length; i++) {
+    const reversed = wordArr[i].split('').reverse().join('');
+
+    if (stack[stack.length-1] === reversed) stack.pop();
+    else stack.push(wordArr[i]);
+  }
+
+  return !stack.length;   // if there's something in the stack, it will evaluate to false, otherwise if nothing in stack, it will evaluate to true
