@@ -14,6 +14,7 @@
  */
 
 function binToDec(binary) {
+    console.log("DAVID WAS HERE");
     let number = 0;
     binary = binary.split(""); //['1','1']
     let pow = binary.length - 1
