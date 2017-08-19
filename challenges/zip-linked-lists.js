@@ -29,4 +29,10 @@ function zip(l1, l2) {
   return zipped;
 }
 
+function zipR(l1, l2) {
+  if (!l1) return l2;
+  l1.next = zipR(l2, l1.next);
+  return l1;
+}
+
 module.exports = {Node: Node, zip: zip};
