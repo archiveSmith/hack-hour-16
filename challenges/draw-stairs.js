@@ -14,8 +14,23 @@
 */
 
 function drawStairs(n) {
+    //loop through the til n-1, add " "
+    //add " " + "*" to the string[n] + '/n'
+    //return string
 
+    let spaces = '';
+    let splats = '';
+    for(let i = 1; i <=n; i++) {
+        spaces = " ".repeat(n-i);
+        splats = "*".repeat(i);
+        console.log(spaces + splats);
+    }
 }
 
+function drawStairs2(n) {
+    for(let i = 1; i <=n; i+=1) {
+        console.log(" ".repeat(n-i) + "*".repeat(i))
+    }
+}
 
 module.exports = drawStairs;

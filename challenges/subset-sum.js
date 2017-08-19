@@ -9,7 +9,21 @@
  */
 
 function subsetSum(array, target) {
+    var result = [];
+    if(array.includes(target)) {
+        return true;
+    } else {
+        //calculation for all the numbers added together;
+        var everything = 0;
+        for(var i = 0; i< array.length; i++) {
+            everything = everything + array[i]
+        }
+        result.push(everything)
+        for(var k = 0; k< )
+    }
 
+    //have a results array to save our permutations
+    //loop through and push into our RESULTS array all the numbers first without adding
 }
 
 module.exports = subsetSum;
