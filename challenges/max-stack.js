@@ -1,13 +1,28 @@
-/*
- * Create a stack with the push, pop, and getMax methods.
- * push should return the new length of the stack.
- * pop should return the element that was just removed.
- * getMax should return the largest value currently in the stack.
- * BONUS: The getMax method should retrieve the maximum value from the stack in O(1) time.
- */
 
-function Stack() {
-  // body...
+class Stack {
+  constructor() {
+    this.array = [];
+    this.length = 0;
+  }
+  push(value) {
+    this.array[this.length] = value;
+    this.length += 1;
+    return this.length;
+  }
+  pop() {
+    this.length -= 1;
+    return this.array[this.length];
+  }
+  getMax() {
+    let max = this.array[0];
+    this.array.forEach((ele) => {
+      if (ele > max) {
+        max = ele;
+      }
+    });
+    return max;
+  }
 }
+
 
 module.exports = Stack;
