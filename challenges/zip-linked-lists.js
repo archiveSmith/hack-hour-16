@@ -10,7 +10,25 @@ function Node(val) {
   this.next = null;
 }
 
-function zip(l1, l2) {
-};
+function zip(l1, l2, value) {
+  l1 = new Node(value);
+  l2 = new Node(value);
+  let head;
 
-module.exports = {Node: Node, zip: zip};
+  if (l1 === null) return l2;
+  if (l2 === null) return l1;
+
+  while (l1.next !== null) {
+    if (l1.next.value > l2.value) {
+      let temp = l1.next;
+      l1.next = l2;
+      l2 = temp;
+    }
+    l1 = l1.next;
+  }
+  if (l1.next == null) l1.next = l2;
+  head = l1;
+  return head;
+}
+
+module.exports = { Node, zip };
