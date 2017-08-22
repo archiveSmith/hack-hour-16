@@ -14,7 +14,25 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
+  let current = head;
+  let stack = [];
 
+  while (current) {
+    stack.push(current.value)
+    current = current.next
+  }
+  let current2 = head
+  while (current2) {
+    current2.value = stack.pop();
+    current2 = current2.next
+  }
+  return head
 }
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
+
+let myList = new Node(0);
+myList.next = new Node(1);
+myList.next.next = new Node(2);
+// console.log(myList)
+console.log(reverseLinkedList(myList))
