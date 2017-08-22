@@ -8,13 +8,45 @@
  *
  */
 
-function Node(value) {
-    this.value = value;
-    this.next = null;
+function Node(val) {
+  this.value = val;
+  this.next = null;
 }
 
-function reverseLinkedList(head) {
+const la = new Node(1);
+la.next = new Node(2);
+la.next.next = new Node(3);
 
+console.log(reverseLinkedList(la));
+
+function reverseLinkedList(head) {
+  let start = head;
+  let subsequent = null;
+
+  while (start) {
+    const save = start.next;
+    start.next = subsequent;
+    subsequent = start;
+    start = save;
+  }
+  return subsequent;
 }
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
+
+/*
+start = 1
+subs = null
+------
+save = 2
+1.next = subs (null)
+subs = 1
+start = 2
+------
+save = 3
+2.next = subs (1)
+subs = 2
+start = 3
+------
+etc.... until start is null at which point return subs.
+*/
