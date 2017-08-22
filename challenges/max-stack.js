@@ -6,9 +6,14 @@
  * BONUS: The getMax method should retrieve the maximum value from the stack in O(1) time.
  */
 
-// function Stack() {
-//   // body...
-// }
+ //// APPROACH
+function Stack() {
+  this.stack = [];
+  this.maxStack = []; // will hold objects {max: num, i: index}
+}
+
+
+/// MINE
 
 class Stack {
   constructor() {
@@ -46,12 +51,11 @@ class Stack {
 
       return tmp;
     }
-
     // else return console.log('Error: stack is empty!');
   }
 
   getMax() { 
-    console.log('max: ', this.max);
+    // console.log('max: ', this.max);
     return this.max; 
   }
 }
