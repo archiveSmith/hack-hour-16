@@ -27,7 +27,9 @@ function bestProfit(stock_prices_yesterday, maxArr = [], ind = 0) {
     }
     ind = indexes[indexes.length-1]
     let maxSegment = Math.max.apply(null, maxes)
+    maxArr.push(maxSegment)
     return bestProfit(stock_prices_yesterday, maxArr, ind)
   }
+
 
 module.exports = bestProfit;
