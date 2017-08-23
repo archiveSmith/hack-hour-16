@@ -8,6 +8,7 @@
  *
  */
 
+<<<<<<< HEAD
 
 function LinkedList() {
     this.head = null;
@@ -55,4 +56,15 @@ function LinkedList() {
   console.log(list)
   console.log(list.reverseLinkedList())
   
+=======
+function Node(value) {
+    this.value = value;
+    this.next = null;
+}
+
+function reverseLinkedList(head) {
+
+}
+
+>>>>>>> c92c360e766e15652bb06f3dad2a3ed980ea39e1
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
