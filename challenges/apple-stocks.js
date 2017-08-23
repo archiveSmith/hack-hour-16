@@ -13,7 +13,16 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+  let high = 0;
+  let low = Infinity;
+  let error;
+  stock_prices_yesterday.forEach((price) => {
+    if (price < 0 || typeof price !== 'number') error = 'invalid input';
+    if (price > high) high = price;
+    if (price < low) low = price;
+  });
+  if (error) return 0;
+  return (high - low);
 }
 
 module.exports = bestProfit;
