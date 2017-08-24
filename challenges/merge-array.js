@@ -14,32 +14,6 @@
  */
 
 function mergeArrays(arr1, arr2) {
-
-
-  let mergedArray = [];
-  let bigArr;
-  let smallArr;
-  if (arr1.length > arr2.length) {
-    bigArr = arr1;
-    smallArr = arr2;
-  } else {
-    bigArr = arr2;
-    smallArr = arr1
-  }
-
-  for (let i = 0; i < bigArr.length; i++) {
-    let min = Math.min(bigArr[i] || null, smallArr[i] || null)
-    let max = Math.max(bigArr[i] || null, smallArr[i] || null)
-    if (min) mergedArray.push(min)
-    if (max) mergedArray.push(max)
-  }
-  return mergedArray
-}
-console.log(mergeArrays([3,4,6,10,11,15,21], [1,5,8,12,14,19]))
-
-module.exports = mergeArrays;
-
-function mergeArrays2(arr1, arr2) {
   if (!Array.isArray(arr1) || !Array.isArray(arr2)) return 'Inputs need to be arrays'
 
   let bigArr;
@@ -58,4 +32,30 @@ function mergeArrays2(arr1, arr2) {
   }
   return smallArr
 }
-console.log(mergeArrays2([3,4,6,10,11,15,21], [1,5,8,12,14,19]))
+console.log(mergeArrays([3,4,6,10,11,15,21], [1,5,8,12,14,19]))
+
+// function mergeArrays(arr1, arr2) {
+//
+//
+//   let mergedArray = [];
+//   let bigArr;
+//   let smallArr;
+//   if (arr1.length > arr2.length) {
+//     bigArr = arr1;
+//     smallArr = arr2;
+//   } else {
+//     bigArr = arr2;
+//     smallArr = arr1
+//   }
+//
+//   for (let i = 0; i < bigArr.length; i++) {
+//     let min = Math.min(bigArr[i] || null, smallArr[i] || null)
+//     let max = Math.max(bigArr[i] || null, smallArr[i] || null)
+//     if (min) mergedArray.push(min)
+//     if (max) mergedArray.push(max)
+//   }
+//   return mergedArray
+// }
+// console.log(mergeArrays([3,4,6,10,11,15,21], [1,5,8,12,14,19]))
+
+module.exports = mergeArrays;
