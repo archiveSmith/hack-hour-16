@@ -14,7 +14,35 @@
  */
 
 function mergeArrays(arr1, arr2) {
+    //This one takes more steps
+    // if(!Array.isArray(arr1) || !Array.isArray(arr2)) return [];
 
+    //     let arr3 = arr1.concat(arr2);
+
+    //     return arr3.sort((a,b) => {return a-b})
+
+
+    //Below kinda works, it is off by certain values
+
+    if (!Array.isArray(arr1) || !Array.isArray(arr2)) return [];
+
+    const minVal = Math.min(arr1.length, arr2.length);
+
+    let store = [];
+
+    for (let i = 0; i < minVal; i++) {
+        if (arr1[i] < arr2[i]) {
+            store.push(arr1[i]);
+            store.push(arr2[i]);
+        } else {
+            store.push(arr2[i]);
+            store.push(arr1[i]);
+        }
+    }
+
+    store.concat(arr1.splice(minVal, arr1.length - 1)) || store.concat(arr2.splice(minVal, arr2.length - 1));
+
+    return store.sort((a, b) => { return a - b });
 }
 
 module.exports = mergeArrays;
