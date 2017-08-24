@@ -13,7 +13,10 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+  let array = stock_prices_yesterday;
+  initPrice = array[0];
+  // WHAT!? array[i] - array[0] > currentMax <---return current Max? hhhhhhhh hhh
+  //
 }
 
 module.exports = bestProfit;

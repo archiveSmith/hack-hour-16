@@ -9,25 +9,22 @@
  *
  */
 function modemean(array) {
-  let mean = Math.floor(array.reduce(function (sum, num) {
+  const mean = Math.floor(array.reduce(function (sum, num) {
   return sum + num
   })/array.length)
-
-  let mode;
-
-  let data = array.reduce(function (list, num) {
+  const data = array.reduce(function (list, num) {
   list[num] = (list[num] || 0)+1;
   return list;
   } ,{})
-
   let highestFrequency = 0;
+  let mode;
+  let modes = [];
+
   for (var number in data) {
     if (data[number] > highestFrequency && data[number] > 1) {
       highestFrequency = data[number]
     }
   }
-
-  let modes = [];
 
   for (var i  in data) {
     if (data[i] === highestFrequency) {

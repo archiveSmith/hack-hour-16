@@ -24,12 +24,12 @@ function Node(val) {
 function kthToLastNode(k, head) {
   let current = head
   let listLength = 0;
-// find length of list
+// find length of lis
   while (current) {
     listLength++;
     current = current.next;
   }
-  if (k > listLength) return undefined;
+  if (k > listLength) return undefined;q
 // iterate again up to list-k, and save each node to kNode..return kNode.value
   kNode = head
   for (let i = 0; i < listLength-k; i++) {

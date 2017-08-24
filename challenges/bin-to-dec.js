@@ -19,9 +19,9 @@ function binToDec(binary) {
   for (let i = binary.length-1; i >= 0; i--) {
     if (binary[i] === '1') {
       sum += Math.pow(2, binary.length-1-i)
-      // console.log('iterating sum: ', sum)
-      // console.log('index: ', i)
-      // console.log('')
+      console.log('iterating sum: ', sum)
+      console.log('index: ', i)
+      console.log('')
     }
   }
   return sum

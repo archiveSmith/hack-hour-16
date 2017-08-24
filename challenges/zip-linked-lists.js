@@ -39,6 +39,7 @@ function zip(l1, l2) {
       current1 = current1.next;
       current2 = current2.next;
       current3 = current3.next.next;
+
     }
   }
   return l3
@@ -54,6 +55,12 @@ list2.next.next = new Node(2);
 
 console.log(zip(list1, list2))
 
+
+// function zip(l1, l2) {
+//   if(!l1) return l2;
+//   l1.next = zip(l2, l1.next);
+//   return l1;
+// }
 
 
 

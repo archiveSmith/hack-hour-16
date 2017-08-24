@@ -26,20 +26,20 @@
 
 function balancedParens(input){
   if (input.length < 2) return false;
-
+  // pair { open brace: closing brace }
   const pair = {
     '[' : ']',
     '(' : ')',
     '{' : '}'
   }
-
+  //filter out ALL non-brace characters
   let bracesArray = input.split('').filter(char => {
     const braces = ['[',']','(',')','{','}'];
     return braces.indexOf(char) > -1
   })
-
+  //push all open braces
   let stack = [];
-
+  //check if current element is a closing brace, and match with last opening brace
   for (let i = 0; i < bracesArray.length; i++) {
     let current = bracesArray[i]
 
@@ -56,11 +56,13 @@ function balancedParens(input){
 
   return stack.length === 0 ? true : false;
 }
-console.log(balancedParens(' var hubble = function() { telescopes.awesome();')) // false
-console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')) //true
-console.log(balancedParens('[](){}[]')) // true
-console.log(balancedParens('[](){}')); // true
-console.log(balancedParens('[({})]'));   // true
-console.log(balancedParens('[(]{)}')); // false
-console.log(balancedParens(')))))')) //false
+//
+
+console.log(balancedParens(' var hubble = function() { telescopes.awesome();') === false)
+console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }') === true)
+console.log(balancedParens('[](){}[]') === true)
+console.log(balancedParens('[](){}') === true)
+console.log(balancedParens('[({})]') === true)
+console.log(balancedParens('[(]{)}') === false)
+console.log(balancedParens('))))))') === false)
 module.exports = balancedParens;
