@@ -13,6 +13,7 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+<<<<<<< HEAD
   if (!Array.isArray(stock_prices_yesterday)) {
     return 'invalid input';
 	}
@@ -25,6 +26,9 @@ function bestProfit(stock_prices_yesterday) {
     });
   }
   return profit;
+=======
+
+>>>>>>> 66927604a0163bc4ae49a2c1c1809a675f1336e5
 }
 
 module.exports = bestProfit;
