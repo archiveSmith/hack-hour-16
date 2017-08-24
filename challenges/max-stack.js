@@ -12,9 +12,12 @@ function Stack() {
   this.maxStack = []; // will hold objects {max: num, i: index}
 }
 
+// when pushing, only push larger numbers to the max stack, smaller numbers can never be the max because you can only push and pop
+  // stack [29, 30, 28, 40]
+  // max [ { 29, 0 }, {30, 1}, {40, 3}]
+
 
 /// MINE
-
 class Stack {
   constructor() {
     this.length = 0;
