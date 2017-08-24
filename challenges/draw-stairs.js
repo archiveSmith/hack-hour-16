@@ -34,8 +34,7 @@ function drawStairs2(n) {
     }
   }
 }
-drawStairs2(3)
-
+drawStairs2(9)
 // Hackhour Solution
 function drawStairs(n) {
   for (let i = 1; i <= n; i++) {

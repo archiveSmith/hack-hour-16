@@ -13,13 +13,13 @@ class Stack {
     this.stack = [];
   }
 
-  push(value) {
+  pushes(value) {
       this.stack.push(value)
       if (value > this.max || !this.max) this.max = value
       return ++this.index
   }
 
-  pop() {
+  pops() {
       this.index--;
       let poppedValue = this.stack.pop()
       if (poppedValue === this.max) {
@@ -31,6 +31,8 @@ class Stack {
   getMax() {
     return this.max
   }
+
+
 }
 
 
@@ -38,12 +40,12 @@ module.exports = Stack;
 
 
 let myStack = new Stack();
-myStack.push(3)
-myStack.push(5)
-myStack.push(6)
-myStack.pop()
-myStack.push(5)
-myStack.pop();
-myStack.push(500)
+myStack.pushes(3)
+myStack.pushes(5)
+myStack.pushes(6)
+myStack.pops()
+myStack.pushes(5)
+myStack.pops();
+myStack.pushes(500)
 console.log(myStack)
 console.log(myStack.getMax())

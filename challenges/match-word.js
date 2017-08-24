@@ -21,7 +21,7 @@ function matchWord(str) {
   .filter(function (el) {
     return el.length > 0
   })
-
+  console.log(array)
   let stack = [];
 
   for (let i = 0; i < array.length; i++) {
@@ -42,6 +42,8 @@ console.log(matchWord('IF()()fi[]') == true)
 console.log(matchWord('for__if__rof__fi') == false)
 console.log(matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw') == true)
 console.log(matchWord('') == true)
+console.log('SUPER EDGE CASE?: ', matchWord('racecar---raceca-r'))
+
 
 
 module.exports = matchWord;

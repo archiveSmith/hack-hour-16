@@ -19,6 +19,7 @@ function subsetSum(array, target) {
       combinations.push(combinations[j].concat(array[i]))
     }
   }
+  console.log(combinations)
   combinations.shift();
 
   //get the sums of each subSet and return if there is a sum that matches target
@@ -38,3 +39,15 @@ console.log(subsetSum([3, 34, 4, 12, 5, 12], 32) == true)
 console.log(subsetSum([8, 2, 4, 12], 13) == false)
 console.log(subsetSum([8, -2, 1, -3], 6) == true)
 module.exports = subsetSum;
+
+function subsetSum2 (array, target) {
+  if (!target) return true; //base case..if target === 0; 0 == false;
+  if (!array.length) return false; //length === 0 : false
+
+  return subsetSum2(array.slice(1), target-array[0]) || subsetSum2(array.slice(1), target)
+}
+
+console.log('subsetSum2: ', subsetSum([3, 7, 4, 2], 5) == true)
+console.log('subsetSum2: ', subsetSum([3, 34, 4, 12, 5, 12], 32) == true)
+console.log('subsetSum2: ', subsetSum([8, 2, 4, 12], 13) == false)
+console.log('subsetSum2: ', subsetSum([8, -2, 1, -3], 6) == true)

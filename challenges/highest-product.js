@@ -11,10 +11,12 @@ function highestProduct(array) {
   const firstThree = array[0]*array[1]*array[2];
   const firstLastTwo = array[array.length-2] * array[array.length-1] * array[0]
 
-  return firstThree > firstLastTwo ? firstThree: firstLastTwo
+  console.log('I am firstThree: ', firstThree)
+  console.log('I am firstLastTwo: ', firstLastTwo)
+
+  return firstThree > firstLastTwo ? firstThree: firstLastTwo;
 }
 
 module.exports = highestProduct;
 
-
-// console.log(highestProduct([-2,-8,-7,9,4]))
+console.log(highestProduct([-2,-8,-7,9,4]));

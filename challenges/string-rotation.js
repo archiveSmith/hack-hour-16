@@ -12,7 +12,7 @@
  */
 
 function isSubstring(s1, s2) {
-  return s1.indexOf(s2) >= 0;
+  return s1.includes(s2);
 }
 
 function stringRotation(s1, s2) {
@@ -38,5 +38,13 @@ function stringRotation(s1, s2) {
   }
 
 }
-console.log(stringRotation('hello', "asd"))
+
+function stringRotation1(s1, s2) {
+  if (s1.length !== s2.length) return false;
+
+  let concat = s1.concat(s1);
+  return isSubstring(concat, s2)
+}
+console.log(stringRotation('hello', 'llohe') == true)
+console.log(stringRotation1('hello', "llohe") == true)
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
