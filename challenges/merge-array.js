@@ -14,7 +14,16 @@
  */
 
 function mergeArrays(arr1, arr2) {
-
+  let curr = 0;
+  while (arr1[curr + 1]) {
+    if (arr2[0] <= arr1[curr]) {
+      const temp = arr2.shift();
+      arr1.splice(curr, 0, temp);
+    }
+    curr += 1;
+  }
+  return arr1.concat(arr2);
 }
+
 
 module.exports = mergeArrays;
