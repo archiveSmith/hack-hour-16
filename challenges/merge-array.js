@@ -12,9 +12,15 @@
  * Complete in O(n) time and O(n) space 
  *
  */
+var my_array = [3,4,6,10,11,15,21];
+var another_array = [1,5,8,12,14,19];
 
 function mergeArrays(arr1, arr2) {
-
+  let arr = arr1.concat(arr2);
+  return arr.sort(function(a, b) {
+   return a - b;
+  });
 }
 
+console.log(mergeArrays(my_array,another_array));
 module.exports = mergeArrays;
