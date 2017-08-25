@@ -11,7 +11,6 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-<<<<<<< HEAD
   
   if(!l2 && l1){return l1}
   if(!l1 && l2){return l2}
@@ -46,8 +45,3 @@ function zip(l1, l2) {
     }
     return answer
   };
-=======
-};
-
-module.exports = {Node: Node, zip: zip};
->>>>>>> 72c6fec46c8f9f83aca64b4111ac4d2ad7b9c5f5
