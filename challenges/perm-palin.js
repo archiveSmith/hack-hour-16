@@ -10,6 +10,7 @@
  */
 
 function permPalin(str) {
+<<<<<<< HEAD
   if(!str.length){return 'error'}
   if(typeof(str)!=='string'){return 'error'}
   if(str.length === 1){return true}
@@ -32,6 +33,9 @@ function permPalin(str) {
     }
   }
   return singles.length <= 1
+=======
+	
+>>>>>>> 41c12889dc56d2d95d6869a5fb134bb0d4bc92e2
 }
 
 module.exports = permPalin;
