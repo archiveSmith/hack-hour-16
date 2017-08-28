@@ -17,7 +17,15 @@
  */
 
 function rotateGrid(grid, n) {
-
+    let bigArray = [];
+    for (var j = 0; j < n; j++) {
+      smallerArray = [];
+        for (var i = grid.length - 1; i >= 0; i--) {
+            smallerArray.push(grid[i][j]);
+        }
+        bigArray.push(smallerArray);
+    }
+    return bigArray;
 }
 
 module.exports = rotateGrid;
