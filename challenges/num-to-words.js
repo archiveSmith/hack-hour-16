@@ -13,7 +13,36 @@
  */
 
 function numToWords(num) {
-
-}
+    if(num === 0){return "Zero"}
+    let converter = {
+      1: 'One', 2: 'Two',
+      3: 'Three', 4: 'Four', 5: 'Five',
+      6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine',
+      10: 'Ten', 11: 'Eleven', 12: 'Twelve', 13: 'Thirteen',
+      14: 'Fourteen', 15: 'Fifteen', 16: 'Sixteen', 17: 'Seventeen',
+      18: 'Eighteen', 19: 'Nineteen', 20: 'Twenty', 30: 'Thirty', 40: 'Fourty',
+      50: 'Fifty', 60: 'Sixty', 70: 'Seventy', 80: 'Eighty', 90: 'Ninety'
+    }
+    let nums = num.toString().split("")
+    let str = ''
+    let string = []
+    for(let i = nums.length-2; i >= 0; i--){
+      str += converter[nums[i]]
+      if(parseInt(nums[i]+nums[i+1]) < 20 && string.length < 2)
+          {string.unshift(converter[nums[i]+nums[i+1]])}
+      else{
+        string.unshift(converter[parseInt(nums[i]+ "0")])
+        string.push(converter[parseInt(nums[i+1])])
+      }
+  //     if(string.length === 1){
+  //       string.push(converter[(parseInt(nums[i] + nums)+10)])
+  //     }
+  //     else{string.push(converter[nums[i]])}
+    }
+    console.log(str)
+    console.log(string)
+    return converter[num]
+  }
+  console.log(numToWords(2483579431))
 
 module.exports = numToWords;
