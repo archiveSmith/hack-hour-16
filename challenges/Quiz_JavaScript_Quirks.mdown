@@ -1,0 +1,178 @@
+// JS Quiz -hack hour-
+
+********
+** 1. **
+********
+
+JS is very case sensitive
+	// ex let lower != LOWER
+
+********
+** 2. **
+********
+
+what is type of arguments?
+	// it is an array like object, and will return 'object'
+
+********
+** 3. **
+********
+
+(function (x) {
+	delete x
+	return x
+}) (1);
+
+	a) 1			<--- correct answer
+	b) null
+	c) undefined  	<--- my guess
+	d) Error
+
+// Q: what will this function return?
+// A: it will return 1
+// why? delete will not delete parameters
+
+var o = {x:1}
+delete o.x
+return o.x   <-- deletes property x from object o
+
+function(x) {} 
+delete x
+typeof x   <--- returns function, delete will only delete PROPERTIES from objects
+
+********
+** 4. **
+********
+
+var y = 1, x = y = typeof x;
+x;
+
+	a) 1
+	b) 'number'
+	c) undefined
+	d) 'undefined'
+
+Q: what is the output?  (type of x) 
+A: 'undefined'
+
+********
+** 5. **
+********
+
+var foo = {
+	bar: function() {return this.baz},
+	baz: 1
+};
+
+(function() {
+	return typeof arguments[0]();    <--- what is arguments[0]?, what is 'this' evaluated to?
+}) (foo.bar);
+
+	a) 'undefined'   // answer
+	b) 'object'
+	c) 'number'
+	d) 'function'
+
+Q: waht is output?
+A: string 'undefined', because 'this' is not pointing correctly
+
+********
+** 6. **
+********
+
+var x = 1
+if (function() {}){
+	x += typeof f;
+}
+x;
+
+	a) 1
+	b) '1function'
+	c) '1undefined'      <--- answer
+	d) NaN
+
+Q: what is output?
+A: '1undefined'     <---- because f is not defned 
+
+
+********
+** 7. **
+********
+var x = [typeof x, typeof y][1]];
+typeof typeof x
+
+	a) 'number'
+	b) 'string'	
+	c) 'undefined'   <---- answer
+	d) 'object'
+
+Q: what is typeof typeof x?
+A: string undefined ( 'undefined' ), because typeof x[1]  is 'typeof y', and typeof 'y' is undefined
+	x[1] === undefined
+	typeof undefined === 'undefined'
+
+
+********
+** 8. **
+********
+
+
+(function f() {
+	function f() { return 1; }
+	return f();
+	function f() { return 2; }.
+
+
+}) ()
+
+	a) 1
+	b) 2			<---- answer
+	c) Error
+	d) undefined
+
+Q: what will be the output?
+A: 2.     it will return 2 because function f is redefined, and that redfinition is 'hoisted' to the top
+since 'f()' is below return statement, it is 'hoisted above the return', then over writes original 'f()'
+
+********
+** 9. **
+********
+
+typeof null
+
+	a) 'undefined'
+	b) 'object'       <--- answer
+	c) undefined
+	d) null
+
+Q: what is the result of this?
+A: null is an object
+
+
+
+********
+** 10 **
+********
+
+(function() {
+	var a = b = 3;
+})();
+
+console.log('a defined? ' + typeof a);
+console.log('b defined? ' + typeof b);
+
+	a) a === true, b true
+	b) a false, b false
+	c) a true, b false
+	d) a false, b true   <--- answer
+	
+
+Q: what is output [or, where is a defined, and where is b defined?]
+A: 
+
+var keyword only applies to 'a', b is created as a global variable
+
+
+
+
+
