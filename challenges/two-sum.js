@@ -3,7 +3,16 @@
  */
 
 function twoSum(arr, n) {
-
+  while (arr.length !== 0) {
+    const end = arr.pop();
+    arr.forEach((x) => {
+      if (x + end === n) {
+        return true;
+      }
+    });
+    return false;
+  }
 }
 
 module.exports = twoSum;
+
