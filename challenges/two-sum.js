@@ -5,7 +5,7 @@
 function twoSum(arr, n) {
   for (let i = 0; i < arr.length; i += 1) {
     const target = n - arr[i];
-    const searchArea = arr.slice(i);
+    const searchArea = arr.slice(i + 1);
     if (searchArea.includes(target)) return true;
   }
   return false;
