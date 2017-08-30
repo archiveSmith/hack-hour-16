@@ -2,19 +2,20 @@
  * Create a stack.Then create a queue using two stacks.
  */
 
-
 function Stack() {
   this.storage = {};
   this.length = 0;
 }
 
-Stack.prototype.push = (value) => {
+Stack.prototype.push = function (value) {
   this.storage[this.length] = value;
-  this.length += 1;
+  return ++this.length;
 };
 
-Stack.prototype.pop = () => {
+Stack.prototype.pop = function () {
+  if (!this.length) return;
   const popped = this.storage[this.length - 1];
+  // Deletion is optional and not necessary
   delete this.storage[this.length - 1];
   this.length -= 1;
   return popped;
@@ -24,24 +25,29 @@ Stack.prototype.pop = () => {
 * Queue Class
 */
 
-
+// You could change the frequency of when inbox empties to outbox depending on use
 function Queue() {
-  this.stack1 = new Stack();
-  this.stack2 = new Stack();
+  this.inbox = new Stack();
+  this.outbox = new Stack();
+  this.length = 0;
 }
 
-Queue.prototype.enqueue = (item) => {
-  this.stack1.push(item);
+Queue.prototype.enqueue = function (item) {
+  this.inbox.push(item);
+  this.length += 1;
+  return this.length;
 };
 
-Queue.prototype.dequeue = () => {
-  if (!this.stack2.length) {
-    if (!this.stack1.length) return null;
-    while (this.stack1.length) {
-      this.stack2.push(this.stack1.pop);
+Queue.prototype.dequeue = function () {
+  if (!this.length) return;
+  if (!this.outbox.length) {
+    while (this.inbox.length) {
+      this.outbox.push(this.inbox.pop);
     }
   }
-  return this.stack2.pop();
+  this.length -= 1;
+  const dequeued = this.outbox.pop();
+  return dequeued;
 };
 
 module.exports = {Stack: Stack, Queue: Queue};
