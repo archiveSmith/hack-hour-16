@@ -3,7 +3,13 @@
  */
 
 function twoSum(arr, n) {
-
+    
+    for(let x = 0; x < arr.length; x++){
+        for(let y = 0; y < arr.length; y++){
+            if(arr[x] + arr[y] === n || arr[x] - arr[y] === n || arr[y] - arr[x] === n) return true;
+        }
+    }
+    return false;
 }
 
 module.exports = twoSum;
