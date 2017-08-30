@@ -16,4 +16,9 @@ function bestProfit(stock_prices_yesterday) {
 
 }
 
+// find greatest range between two indexes 
+  // index 2 must be greater than index 1
+
+
+
 module.exports = bestProfit;
