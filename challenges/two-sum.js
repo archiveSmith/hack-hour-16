@@ -3,7 +3,12 @@
  */
 
 function twoSum(arr, n) {
-
+  for (let i = 0; i < arr.length; i += 1) {
+    const target = n - arr[i];
+    const searchArea = arr.slice(i);
+    if (searchArea.includes(target)) return true;
+  }
+  return false;
 }
 
 module.exports = twoSum;
