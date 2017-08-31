@@ -13,6 +13,11 @@
  *
  */
 
+/// EASY solution
+  // concat arrays
+  // sort concated arrays
+
+// MY SOLUTION
 function mergeArrays(arr1, arr2) {
   let index1 = 0;
   let index2 = 0;
@@ -46,6 +51,30 @@ function mergeArrays(arr1, arr2) {
 
   return merged;
 }
+
+
+// Trying to do it in place, NOT DONE
+// function mergeArrays(arr1, arr2) {
+//   let index1 = 0;
+//   let index2 = 0;
+
+//   while (index1 < arr1.length && index2 < arr2.length) {
+//     console.log(`index2: ${index2},  val: ${arr2[index2]}`);
+//     console.log(`index1: ${index1},  val: ${arr1[index1]}`);
+//     // check if arr2 spot should be inserted in arr 1
+//     if (arr2[index2] < arr1[index1]) {
+//       arr1.splice(index2, 0, arr2[index2]);
+//       index2++;
+//       index1++;
+//     } 
+//     else {
+//       index1++;
+//     }
+//   }
+//   // do something when a number runs out
+//   // if ()
+//   return arr1;
+// }
 
 var my_array = [3,4,6,10,11,15,21];
 var another_array = [1,5,8,12,14,19];
