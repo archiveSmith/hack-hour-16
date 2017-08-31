@@ -12,7 +12,7 @@ function twoSum(arr, n) {
   }
   return false
 }
-// let array = [23,-5]
-// console.log(twoSum(array,18))
+let array = [1,2,3,5]
+console.log(twoSum(array,10))
 
 module.exports = twoSum;
