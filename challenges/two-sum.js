@@ -11,4 +11,10 @@ function twoSum(arr, n) {
   return false;
 }
 
+// Needs fixing
+function twoSumRecurs(arr, n, toGo = 2) {
+  if (n === 0 && toGo === 0) return true;
+  if (!arr.length || toGo < 0) return false;
+  return twoSumRecurs(arr.slice(1), n - arr[0], 1) || twoSumRecurs(arr.slice(1), n, 2);
+}
 module.exports = twoSum;
