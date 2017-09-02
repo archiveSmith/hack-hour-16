@@ -8,22 +8,18 @@
  */
 
 function gcd(a, b) {
-  let divisorA = []
-  let divisorB = []
+  let divisor = []
   if(a>b){
     for(let i = 0; i <= b; i++){
-      if(a%i===0){divisorA.push(i)}
-      if(b%i===0 && divisorA.indexOf(i) !== -1){divisorB.push(i)}
+      if(a%i===0 && b%i===0){divisor.push(i)}
     }
-    return divisorB[divisorB.length-1]
+    return divisor[divisor.length-1]
   } else{
     for(let i = 0; i <= a; i++){
-      if(b%i===0){divisorB.push(i)}
-      if(a%i===0 && divisorB.indexOf(i) !== -1){divisorA.push(i)}
+      if(a%i===0 && b%i===0){divisor.push(i)}
     }
-    return divisorA[divisorA.length-1]
+    return divisor[divisor.length-1]
   }
 }
-conso
 
 module.exports = gcd;
