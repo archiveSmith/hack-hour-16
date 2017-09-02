@@ -11,7 +11,7 @@ function BinaryTree(val) {
     this.left = null;
     this.right = null;
 }
-;
+
 function validBST(tree) {
   node = new BinaryTree();
   if (tree.value > node.value && tree.left === undefined) {
@@ -24,6 +24,5 @@ function validBST(tree) {
     recurse(tree.right);
   }
 }
-
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
