@@ -8,10 +8,9 @@
  */
 
 function gcd(a, b) {
-  let bigNum;
-  let smallNum;
+  const bigNum = Math.max(a, b);
+  const smallNum = Math.min(a, b);
   let result;
-  a > b ? (bigNum = a, smallNum = b) : (bigNum = b, smallNum = a);
   for (let i = 1; i < smallNum; i++) {
     if (smallNum % i === 0 && bigNum % i === 0) result = i;
   }
