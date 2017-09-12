@@ -22,7 +22,18 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-
+  if (k === 0) {
+  return "please select another k";
 }
+  // create an array and push head to array
+  let arr = [head];
+  // assign a variable to to the next node with head.next
+  let nextNode = head.next;
+  // while looping push all the nodes to array until node.next = null
+  while (nextNode !== null) {
+    arr.push(nextNode);
+    nextNode = nextNode.next;
+  }
 
-module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+  return arr[arr.length - k].value;
+}

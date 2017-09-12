@@ -13,7 +13,39 @@
  */
 
 function numToWords(num) {
+  const ones = {
+    0: 'Zero',
+    1: 'One',
+    2: 'Two',
+    3: 'Three',
+    4: 'Four',
+    5: 'Five',
+    6: 'Six',
+    7: 'Seven',
+    8: 'Eight',
+    9: 'Nine',
+    10: 'Ten'
+  };
+  const teens = {
+    11: 'Eleven',
+    12: 'Twelve',
+    13: 'Thirteen',
+    14: 'Fourteen',
+    15: 'Fifteen',
+    16: 'Sixteen',
+    17: 'Seventeen',
+    18: 'Eighteen',
+    19: 'Nineteen'
+  };
 
+  const tenth = 'ty';
+  const hundreth = 'Hundred';
+
+  let newNum = ('' + num).split('');
+  if (newNum.length === 1) return ones[num];
+  if (newNum.length === 2 && teens[num]) return teens[num];
+  if (newNum.length === 2 ) return ones[newNum[0]] + tenth + ones[newNum[1]];
+  if (newNum.length == 3) return ones[newNum[0]] + hundreth;
 }
 
 module.exports = numToWords;
