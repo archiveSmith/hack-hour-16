@@ -25,7 +25,13 @@
  */
 
 function balancedParens(input){
+	var open = "({[";
+	var inner; 
+	var outer;
 
+	for (var i = 0; i < input.length; i++) {
+		
+	}
 }
 
 module.exports = balancedParens;
