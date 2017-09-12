@@ -18,4 +18,6 @@ function gcd(a, b) {
   return divisor;
 }
 
+// Number.isInteger returns boolean if whole number!
+
 module.exports = gcd;
