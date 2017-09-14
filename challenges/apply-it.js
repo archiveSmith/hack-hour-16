@@ -26,7 +26,12 @@
  */
 
 function applyIt(func, args) {
-
+  const argString = createArgString(args);
+  return () => eval(`func(${argString})`);
 }
+
+const createArgString = (args) => {
+  return args.map(arg => JSON.stringify(arg)).reduce((acc, argString) => `${acc}, ${argString}`);
+};
 
 module.exports = applyIt;
