@@ -8,7 +8,7 @@
 
 
 function countTwos(num) {
-
+  // Brute force method is fine...
 }
 
 module.exports = countTwos;
