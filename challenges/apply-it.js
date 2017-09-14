@@ -26,7 +26,15 @@
  */
 
 function applyIt(func, args) {
+  // return func(...args)
+  // return Array.from(func)
+  
+
 
 }
+const jae = function(name, age, location) {
+  return name + " is " + age + " and he lives in " + location;
+}
+console.log(applyIt(jae, ['Jae', 19, 'South Carolina']))
 
 module.exports = applyIt;

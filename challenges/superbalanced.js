@@ -13,8 +13,30 @@ function BinaryTree(value) {
   this.right = null;
 }
 
-function superbalanced(tree) {
+function superbalanced(tree, count = 0) {
+
+  // if (value > this.value) {
+  //   this.right === null ? this.right = newNode : this.right.add(value);
+  // } else {
+  //   this.left === null ? this.left = newNode: this.left.add(value);
+  // }
+  if (tree.left !== null) count++;
+  if (tree.right !== null) count--;
+  if (tree === null) return count
+  return superbalanced(tree.left, count) && superbalanced(tree.right, count)
+
 
 }
+let newTree = new BinaryTree(20)
+newTree.left = new BinaryTree(10)
+newTree.left.left = new BinaryTree(7)
+newTree.left.right = new BinaryTree(12)
+newTree.left.right.left = new BinaryTree(10)
+
+newTree.right = new BinaryTree(15)
+newTree.right.right = new BinaryTree(18)
+console.log(newTree)
+console.log(superbalanced(newTree))
+
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
