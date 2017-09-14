@@ -25,8 +25,22 @@
  *  DO NOT USE THE BUILT IN APPLY METHOD OR THE SPREAD OPERATOR
  */
 
-function applyIt(func, args) {
-
+const applyIt = (func, args) => {
+  const argString = createArgString(args);
+  return () => eval(func(`${argString}`));
 }
+
+const createArgString = (args) => {
+  return args.map(arg => JSON.stringify(arg))
+    .reduce((acc, argString) => `${acc}, ${argString}`);
+}
+
+var jae = function (name, age, location) {
+  console.log('jae');
+  return name + " is " + age + " and he lives in " + location;
+};
+
+var jaero = applyIt(jae, ["Jae", 19, "South Carolina"]);
+jaero(); //Returns "Jae is 19 and he lives in South Carolina"
 
 module.exports = applyIt;

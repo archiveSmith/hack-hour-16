@@ -25,48 +25,40 @@ function BinaryTree(val) {
 function validBST(tree) {
   // check left
   if (tree.left && tree.right) {
-    console.log(`both | val: ${tree.value} | left: ${tree.left.value} | right: ${tree.right.value}`);
+    // console.log(`both | val: ${tree.value} | left: ${tree.left.value} | right: ${tree.right.value}`);
     if (tree.left.value > tree.value) return false;
     if (tree.right.value < tree.value) return false;
 
     // if left is less, tree is valid
     if (tree.left.value < tree.value && tree.right.value > tree.value) {
-      // console.log('recur both');
       // return && instead of ||
       return validBST(tree.left) && validBST(tree.right);
     }
   }
 
+    // if left is less, tree is valid, if left is greater, tree is invalid  
   else if (tree.left) {
-    console.log('left only');
-    // if left is greater, tree is invalid
-    if (tree.left.value > tree.value) { 
-      return false;
-    }
-    // if left is less, tree is valid
+    if (tree.left.value > tree.value) return false;
     if (tree.left.value < tree.value) return validBST(tree.left);
   }
   else if (tree.right) {
-    console.log('right only');
-    if (tree.right.value < tree.value) {
-      return false;
-    }
+    if (tree.right.value < tree.value) return false;
     if (tree.right.value > tree.value) return validBST(tree.right);
   }
 
+  // defualt return
   return true;
 }
 
 // good tree
-let myTree = new BinaryTree(5);
-myTree.left = new BinaryTree(3);
-myTree.left.left = new BinaryTree(1);
-myTree.left.right = new BinaryTree(4);
+// let myTree = new BinaryTree(5);
+// myTree.left = new BinaryTree(3);
+// myTree.left.left = new BinaryTree(1);
+// myTree.left.right = new BinaryTree(4);
+// myTree.right = new BinaryTree(7);
+// myTree.right.right = new BinaryTree(8);
+// myTree.right.left = new BinaryTree(6);
+// console.log(validBST(myTree));
 
-myTree.right = new BinaryTree(7);
-myTree.right.right = new BinaryTree(8);
-myTree.right.left = new BinaryTree(6);
-
-console.log(validBST(myTree));
-
+  
 module.exports = { BinaryTree: BinaryTree, validBST: validBST };
