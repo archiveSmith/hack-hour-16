@@ -38,24 +38,25 @@ function addLinkedList(l1, l2) {
   }
 
   // concat numbers from each list, then reverse
-  num1 = num1.reverse().join('');
-  num2 = num2.reverse().join('');
-
+  num1 = Number(num1.reverse().join(''));
+  num2 = Number(num2.reverse().join(''));
   // add numbers together
-  total = Number(num1) + Number(num2);
+  total = num1 + num2;
 
+  // console.log(`total: ${total} num1: ${num1} num2: ${num2}`)
   // reverse number, then split new number into digits
   total = String(total).split('').reverse();
   
   // put digits inside a linked list
   curNode = new Node(total[0]);
-
+  startNode = curNode;
   for(let i = 1; i < total.length; i++) {
     curNode.next = new Node(total[i]);
     curNode = curNode.next;
   }
 
-  return curNode;
+  // console.log(startNode);
+  return startNode;
 
 }
 
