@@ -16,14 +16,10 @@ function repeatNumbers(array) {
 
         if (store[array[i]] === 0) {
 
-            store[array[i]] = store[array[i]] + 1
+            return array[i]
         } else {
             store[array[i]] = 0
         }
-    }
-
-    for (key in store) {
-        if (store[key] === 1) return Number(key)
     }
 
 }
