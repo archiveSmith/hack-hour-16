@@ -3,12 +3,26 @@
 // matchWord('__END_DNE-----');  -> true
 // matchWord('__ENDDNE__');  -> false       (not separated by a space)
 // matchWord('IF()()fi[]');  -> true        (should be case-insensitive)
-// matchWord('for__if__rof__fi');  -> false     not properly closed. like ( [) ] 
+// matchWord('for__if__rof__fi');  -> false     not properly closed. like ( [) ]
 // matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+  const arr = str.toLowerCase().split('');
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  const holder = [];
+  let filteredArr = arr.map((char) => {
+    if (alphabet.indexOf(char) === -1) char = '!';
+    return char;
+  });
+  filteredArr = filteredArr.join('').split('!').filter((el) => {
+    if (el !== '') return el;
+  });
+  for (let i = 0; i < filteredArr.length; i++) {
+    if (filteredArr[i] === holder[holder.length - 1]) holder.pop();
+    else holder.push(filteredArr[i].split('').reverse().join(''));
+  }
+  return holder.length === 0;
 }
 
 module.exports = matchWord;
