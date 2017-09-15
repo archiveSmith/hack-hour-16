@@ -29,4 +29,13 @@ function applyIt(func, args) {
   return () => func(...args);
 }
 
+const applyItAgain = (func, args) => {
+  const argstring = createArgString(args);
+  return () => eval(`func(${argstring})`);
+}
+
+const createArgString = (args) => {
+  return args.map(arg => JSON.stringify(arg)).reduce((acc, argString) => `${acc}, ${argString}`);
+};
+
 module.exports = applyIt;
