@@ -3,8 +3,9 @@
  */
 
 
-function Stack() {
-
+function Stack(value) {
+  this.value = value
+  this.list = [];
 }
 
 
@@ -14,7 +15,14 @@ function Stack() {
 
 
 function Queue() {
-
+  this.list = {};
 }
+
+
+
+let stack1 = new Stack(1)
+console.log(stack1);
+let stack2 = new Stack(2)
+
 
 module.exports = {Stack: Stack, Queue: Queue};

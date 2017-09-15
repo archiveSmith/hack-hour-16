@@ -26,6 +26,7 @@ function mergeArrays(arr1, arr2) {
     smallArr = arr1
   }
 
+
   for (let i = 0; i < bigArr.length; i++) {
     let max = Math.max(bigArr[i], smallArr[i] || null)
     smallArr.splice(i*2 || 1, 0, max)
