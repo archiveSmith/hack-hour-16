@@ -26,7 +26,23 @@
  */
 
 function applyIt(func, args) {
+    var stack = [];
 
+    console.log(arguments.length)
+
+    var template = [];
+
+    for (var i = 0; i < arguments.length; i++) {
+        template.push(`args[${i}]`)
+    }
+
+    template = template.join(', ').toString('')
+    //template = '[' + template + ']'
+    console.log(template)
+
+    return function () {
+        return eval('func(' + `${template}` + ')')
+    }
 }
 
 module.exports = applyIt;

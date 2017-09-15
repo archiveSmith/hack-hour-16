@@ -11,7 +11,19 @@
  */
 
 function repeatNumbers(array) {
-
+    array.sort(function(a, b) {
+        return a - b;
+      });
+      
+      
+      for(var i = 0; i < array.length; i++){
+        console.log(array[i])
+        
+        if(array[i] === array[i+1]){
+          return array[i]
+        }
+      }
+      
 }
 
 module.exports = repeatNumbers;

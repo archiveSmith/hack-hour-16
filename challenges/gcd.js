@@ -9,6 +9,21 @@
 
 function gcd(a, b) {
 
+    if (a > b) {
+        max = a
+    } else {
+        max = b
+    }
+
+    divisors = [];
+    for (var i = 0; i < max; i++) {
+        if (a % i === 0 && b % i === 0) {
+            divisors.push(i)
+        }
+    }
+    console.log(divisors)
+    return divisors[divisors.length - 1]
+    
 }
 
 module.exports = gcd;
