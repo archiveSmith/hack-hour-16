@@ -14,7 +14,22 @@
  */
 
 function mergeArrays(arr1, arr2) {
-
-}
+    let longerArr = arr1.length > arr2.length ? arr1 : arr2
+    let shorterArr = longerArr === arr1 ? arr2 : arr1
+    console.log(longerArr)
+    console.log(shorterArr)
+    let answer = []
+      for(let i = 0; i < longerArr.length; i++){
+        if(longerArr[i] < shorterArr[i]){
+          answer.push(longerArr[i])
+          if(shorterArr[i]){answer.push(shorterArr[i])}
+        } else {
+          if(shorterArr[i]){answer.push(shorterArr[i])}
+          answer.push(longerArr[i])
+        }
+      }
+      return answer
+  
+  }
 
 module.exports = mergeArrays;

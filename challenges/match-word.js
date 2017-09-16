@@ -8,7 +8,20 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
-}
+    if(!str){return true}
+    if(str.length <= 2){return false}
+    let stack = []
+    str = str.toLowerCase().match(/[a-z]+/gi)
+    stack[0] = str[0]
+    for(var i = 1; i < str.length; i++){
+      var stackLast = stack[stack.length-1].split('').reverse().join("")
+      if(str[i] === stackLast){
+        stack.pop()
+      } else{
+        stack.push(str[i])
+      }
+    }
+    return stack[0]===undefined
+  }
 
 module.exports = matchWord;
