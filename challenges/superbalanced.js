@@ -42,29 +42,29 @@ function superbalanced(tree) {
 }
 
 // make a test tree
-const ten = new BinaryTree(10);
-const nine = new BinaryTree(9);
-const eight = new BinaryTree(8);
-const seven = new BinaryTree(7);
-const six = new BinaryTree(6);
-const five = new BinaryTree(5);
+// const ten = new BinaryTree(10);
+// const nine = new BinaryTree(9);
+// const eight = new BinaryTree(8);
+// const seven = new BinaryTree(7);
+// const six = new BinaryTree(6);
+// const five = new BinaryTree(5);
 
-seven.left = six;
-six.left = five;
-seven.right = nine;
-nine.right = ten;
-nine.left = eight;
+// seven.left = six;
+// six.left = five;
+// seven.right = nine;
+// nine.right = ten;
+// nine.left = eight;
 
-console.log(superbalanced(seven));
+// console.log(superbalanced(seven));
 
 // unbalanced tree
-const four = new BinaryTree(4);
-const three = new BinaryTree(3);
-const two = new BinaryTree(2);
-five.left = three;
-three.left = two;
-three.right = four;
+// const four = new BinaryTree(4);
+// const three = new BinaryTree(3);
+// const two = new BinaryTree(2);
+// five.left = three;
+// three.left = two;
+// three.right = four;
 
-console.log(superbalanced(seven));
+// console.log(superbalanced(seven));
 
 module.exports = { BinaryTree: BinaryTree, superbalanced: superbalanced };
