@@ -11,10 +11,10 @@
  */
 
 function repeatNumbers(array) {
-  const set = [];
+  const store = {};
   for (let i = 0; i < array.length; i += 1) {
-    if (set.includes(array[i])) return array[i];
-    set.push(array[i]);
+    if (array[i] in store) return array[i];
+    store[array[i]] = true;
   }
 }
 

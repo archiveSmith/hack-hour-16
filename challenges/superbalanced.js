@@ -30,13 +30,14 @@ bst.push(4);
 bst.push(1);
 bst.push(5);
 
+// Could use a one line ternary if you wanted to be a smart arse
 function height(tree) {
   if (!tree) return 0;
   return 1 + Math.max(height(tree.left), height(tree.right));
 }
 
 function maxDepth(node) {
-  if (!node) return 0
+  if (!node) return 0;
   return Math.max(maxDepth(node.right), maxDepth(node.left)) + 1;
 }
 
@@ -48,12 +49,23 @@ function minDepth(node) {
 function superbalanced(tree) {
   const rightHeight = height(tree.right);
   const leftHeight = height(tree.left);
+  // Use math.abs instead!!
   const maxSide = Math.max(rightHeight, leftHeight);
   const minSide = Math.min(rightHeight, leftHeight);
+
   const min = minDepth(tree);
   const max = maxDepth(tree);
   return (maxSide - minSide <= 1) && (max - min <= 1);
 }
+
+const superbal2 = (tree) => {
+  if (!tree) return true;
+  return (
+    Math.abs(height(tree.left) - height(tree.right)) <= 1
+    && superbal2(tree.left)
+    && superbal2(tree.right)
+  );
+};
 
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
