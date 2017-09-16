@@ -10,18 +10,16 @@
  */
 
 
-function mergeRanges(array) {
-  let sorted = array.slice().sort((a, b) => a[0] > b[0])
-  console.log(sorted)
-  for(let i = 0; i < sorted.length-1; i++){
-    const current = sorted[i]
-    const next = sorted[i+1]
-    if(current[1] >= next[0]) {
-      current[1] = Math.max(current[1], next[1]);
-      sorted.splice(i+1, 1);
-  	}
+function mergeRanges(array, count = 0) {
+  if (!array[count]) {return array};
+  let sorted = array.slice().sort((a, b) => a[0] > b[0]);
+  let current = array[count++];
+  let next = sorted[count];
+  if (current[1] >= next[0]) {
+    current[1] = Math.max(current[1], next[1]);
+    sorted.splice(count, 1);
   }
-	return sorted
-}
+  return mergeRanges(sorted, count);
+};
 
 module.exports = mergeRanges;
