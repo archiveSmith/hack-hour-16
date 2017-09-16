@@ -15,9 +15,36 @@
  *
  * BONUS: Do this in place
  */
+//WITHOUT THE BONUS!!
+// function rotateGrid(grid, n) {
+//   let arrays = grid.reverse()
+//   let arr = []
+//   for(let i = 0; i < arrays.length; i++){
+//     let count = 0
+//     arr[i] = []
+//     for(let j = 0; j < arrays.length; j++){
+//       arr[i].push(arrays[count++][i])
+//     }
+// 	}
+// 	return arr
+// }
 
+//BONUS: do it in place
 function rotateGrid(grid, n) {
-
+  let arrays = grid.reverse()
+  let temp = [[],[],[]]
+  for(let k = 0; k < arrays.length; k++){
+    for(let x = 0; x < arrays.length; x++){
+      temp[k].push(arrays[k][x])
+    }
+  }
+  for(let i = 0; i < arrays.length; i++){
+    let count = 0
+    for(let j = 0; j < arrays.length; j++){
+      arrays[i][j] = temp[count++][i]
+    }
+	}
+	return arrays
 }
 
 module.exports = rotateGrid;
