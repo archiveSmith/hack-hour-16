@@ -12,14 +12,16 @@
 
 function mergeRanges(array, count = 0) {
   if (!array[count]) {return array};
-  let sorted = array.slice().sort((a, b) => a[0] > b[0]);
+  if (count === 0) {
+    array.sort((a, b) => a[0] > b[0]);
+  }
   let current = array[count++];
-  let next = sorted[count];
+  let next = array[count];
   if (current[1] >= next[0]) {
     current[1] = Math.max(current[1], next[1]);
-    sorted.splice(count, 1);
+    array.splice(count, 1);
   }
-  return mergeRanges(sorted, count);
+  return mergeRanges(array, count);
 };
 
 module.exports = mergeRanges;
