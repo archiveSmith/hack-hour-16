@@ -6,14 +6,55 @@
  */
  
 
-function BinaryTree(val) {
+function Node(val) {
     this.value = val;
     this.left = null;
     this.right = null;
 }
 
-function validBST(tree) {
+class BinaryTree{
+    constructor(){
+        this.root = null;
+    }
 
+    add(value){
+       const node = new Node(value);
+       if(!this.root){
+           this.root = node;
+           return true;
+       } else {
+           //Begin traversing the tree
+           let current = this.root;
+           while(current){
+
+
+
+               if(node.value < current.value){
+                   if(!current.left){
+                       current.left = node;
+                       return true;
+                   }
+                   current = current.left;
+
+
+
+               } else if (node.value < current.value){
+                   if(!current.right){
+                       current.right = node;
+                       return true;
+                   }
+                   current = current.right
+
+
+
+               } else {
+                   return false;
+               }
+           }
+       }
+    }
 }
+
+const validBST = new BinaryTree();
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};

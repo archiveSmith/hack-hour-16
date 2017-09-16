@@ -22,7 +22,8 @@ function gcd(a, b) {
     for (i = 1; i < max; i++){
       if ( (min * i ) % max === 0){ 
         res = min * i;
-        break;}
+        break;
+      }
     }
     return res
   }
