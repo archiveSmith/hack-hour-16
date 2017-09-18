@@ -13,7 +13,8 @@
 function mergeRanges(array) {
   let mergedTimes = []
   let sortedTimes = array.sort((a, b) => {
-    return a.reduce((acc, el) => acc+el) - b.reduce((acc, el) => acc + el)
+    if (a[0] === b[0]) return a[1] - b[1]
+    return a[0] - b[0]
   })
   console.log(sortedTimes)
   for (let i = 0; i < sortedTimes.length; i++) {
@@ -35,3 +36,25 @@ var times = [[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]]
 console.log(mergeRanges(times))// [[0, 1], [3, 8], [9, 12]]
 
 module.exports = mergeRanges;
+
+// function mergeRanges2(array) {
+//   return array.sort((a, b) => {
+//     return a.reduce((acc, el) => acc + el) - b.reduce((acc, el) => acc + el)
+//   })
+//     .reduce((mergedTimes, time) => {
+//       let startTime = time[0]
+//       let endTime;
+//       array.forEach((arr, index) => {
+//         if (time[1] > arr[0]) {
+//           console.log('SWITCH')
+//           endTime = arr[1]
+//           array.splice(index, 1)
+//         }
+//       })
+//       console.log([startTime, endTime])
+//     }, [])
+//
+//
+// }
+// console.log('------------------------')
+// console.log(mergeRanges2([[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]]))
