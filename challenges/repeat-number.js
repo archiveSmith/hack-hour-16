@@ -18,4 +18,7 @@ function repeatNumbers(array) {
   }
 }
 
+// Or find sum of non repeating sequence as n(n+1)/2. Then subtract this from actual sum of sequence to give single number that repeats.
+
+
 module.exports = repeatNumbers;
