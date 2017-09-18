@@ -33,7 +33,28 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-
+  //store values of each node starting from the head? ..is that constant space
+  //constant space means the memory you use does not depend on the size of the input
+  //if we create a storage to store each node's value it IS depending on the size of the input....TRY AGIAN :D
+  let current1 = head
+  let current2 = head.next
+  console.log(current1, current2)
+  while(current1.value !== current2.value) {
+    if (!current1.next || !current2.next.next) return false
+    current1 = current1.next
+    current2 = current2.next.next
+  }
+  return true
 }
+let node1 = new Node(1)
+let node2 = node1.next = new Node(2)
+let node3 = node2.next = new Node(3)
+
+node3.next = node2
+// console.log(node1)
+console.log(hasCycle(node1))
+
+
+
 
 module.exports = {Node: Node, hasCycle: hasCycle}
