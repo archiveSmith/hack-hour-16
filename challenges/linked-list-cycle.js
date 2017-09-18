@@ -33,14 +33,16 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  let arr = []
   let temp = head;
+  arr.push(temp)
   try{
     while (temp.next) {
       temp = temp.next
-      if(temp.value === head.value){
-        console.log('infinite loop');
-        return true;
+			if (arr.indexOf(temp) !== -1) {
+        return true
       }
+      arr.push(temp)
     }
   } catch (err) {
     console.log (err)
