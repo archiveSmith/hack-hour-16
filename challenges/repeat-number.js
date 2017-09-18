@@ -19,4 +19,10 @@ function repeatNumbers(array) {
   return false;
 }
 
+const repeatNumbers = array =>
+  array.reduce((acc, val) => acc + val) - getSeriesSum(array.length - 1);
+
+const getSeriesSum = length => length * (length + 1)/2
+
+
 module.exports = repeatNumbers;
