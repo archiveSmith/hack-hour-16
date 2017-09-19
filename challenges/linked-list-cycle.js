@@ -36,25 +36,25 @@ function hasCycle(head) {
   let currentNode = head;
   //console.log(head.next)
 
-let values = [];
+let nodeList = [];
 
   while(currentNode){
     
-    if(values.length > 0){
-    for(var i = 0; i < values.length; i++){
-    
-      console.log(currentNode.value, values[i])
-    
-      if(currentNode.value === values[i]){
+    if(nodeList.length > 0){
+      
+    for(var i = 0; i < nodeList.length; i++){
+      
+      if (currentNode === nodeList[i]){
         return true
       }
     }
     }
-    
-    values.push(currentNode.value)
+    nodeList.push(currentNode)
     
     currentNode = currentNode.next
   }
+  
+  
 //console.log(values)
 return false
 }
