@@ -7,6 +7,22 @@
 
 function sumMultiples3Or5Below1000() {
   let sum = 0;
+  let three = 0;
+  let five = 0;
+
+  while(three + 3 < 1000){
+    three += 3;
+    sum += three;
+  }
+
+  while(five + 5 < 1000){
+    five += 5;
+    if( five % 3 === 0){
+      
+    } else {
+    sum += five;
+    }
+  }
 
   return sum;
 }
@@ -16,6 +32,22 @@ function sumMultiples3Or5Below1000() {
 // and returns the sum of multiples of x and y below z
 function sumMultiplesXOrYBelowZ(x, y, z) {
   let sum = 0;
+  let check_x = 0;
+  let check_y = 0;
+
+  while(check_x + x < 1000){
+    check_x += x;
+    sum += check_x;
+  }
+
+  while(check_y + y < 1000){
+    check_y += y;
+    if( check_y % x === 0){
+      
+    } else {
+    sum += check_y;
+    }
+  }
 
   return sum;
 }
