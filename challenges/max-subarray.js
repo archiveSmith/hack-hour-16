@@ -28,7 +28,7 @@ function maxSubarray(arr) {
         return Math.max(a, b);
     });
 
-    return storage[max]
+    return max
 }
 
 module.exports = maxSubarray;
