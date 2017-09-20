@@ -12,14 +12,14 @@ function maxSubarray(array) {
   let end = array[array.legth - 1];
   let max = 0;
   for (let i = 0; i < array.length; i += 1) {
-    const current = getSubSum(i, array.length - 1, array);
+    let current = getSubSum(i, array.length - 1, array)
     if (current > max) {
       max = current;
       start = i;
     }
   }
-  for (let i = end; i >= start; i -= 1) {
-    const current = getSubSum(start, i, array);
+  for (let i = array.length - 1; i >= start; i -= 1) {
+    let current = getSubSum(start, i, array);
     if (current > max) {
       max = current;
       end = i;
