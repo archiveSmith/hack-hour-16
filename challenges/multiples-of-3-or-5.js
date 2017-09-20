@@ -8,18 +8,13 @@
 function sumMultiples3Or5Below1000() {
   let sum = 0;
   
-  var j = 5; 
-  
-  for(var i = 3; i < 1000; i=i+3){
-  if(j < 1000){
-  sum = sum + i + j;
-  j = j + 5;
-  } else {
-    sum = sum + i
+  for(var i = 1; i < 1000; i++){
+    if(i % 3 === 0 || i % 5 === 0){
+      console.log(i)
+      sum = sum + i
+    }
   }
-  }
-
-  return sum;
+  return sum
 }
 
 
