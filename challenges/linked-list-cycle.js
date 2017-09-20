@@ -33,7 +33,17 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-
+  if (!head) return false;
+  const nodes = [];
+  let current = head;
+  while (current.next) {
+    nodes.push(current);
+    if (nodes.includes(current.next)) return true;
+    current = current.next;
+  }
+  return false;
 }
+
+// Floyds cycle detection algorithm - check out!
 
 module.exports = {Node: Node, hasCycle: hasCycle}

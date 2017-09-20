@@ -14,7 +14,20 @@
  */
 
 function reverseInPlace(array) {
-
+  let start = 0;
+  let end = array.length - 1;
+  while (start < end) {
+    let temp = array[start];
+    array[start] = array[end];
+    array[end] = temp;
+    start += 1;
+    end -= 1;
+  }
+  return array;
 }
+
+// const oddchars = ['a','b','c','d','e','f','g'];
+// const evenchars = ['a','b','c','d','e','f']
+// const noChars = [];
 
 module.exports = reverseInPlace;

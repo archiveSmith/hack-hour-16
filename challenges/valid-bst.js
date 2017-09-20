@@ -13,7 +13,25 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
+  if (!tree) return true;
+  if (tree.left !== null && tree.left.value > tree.value) return false;
+  if (tree.right !== null && tree.right.value < tree.value) return false;
+  return validBST(tree.left) && validBST(tree.right);
+}
 
+function checkTree(tree) {
+  const arr = [];
+
+  function depthFirstIn(bst) {
+    if (!bst) return;
+    depthFirstIn(bst.left);
+    arr.push(bst.value);
+    depthFirstIn(bst.right);
+  }
+
+  depthFirstIn(tree);
+
+  // then check if array is sorted
 }
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};

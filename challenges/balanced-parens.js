@@ -24,8 +24,28 @@
  *
  */
 
-function balancedParens(input){
+const openParens = '{[('
+const closedParens = '}])'
+const allParens = openParens + closedParens;
 
+function balancedParens(input) {
+  input = input.split('').filter(char => allParens.includes(char)).join('');
+  const stack = [];
+
+  for (let i = 0; i < input.length; i += 1) {
+    if (openParens.includes(input[i])) {
+      stack.push(input[i]);
+    }
+    if (closedParens.includes(input[i])) {
+      if (stack.length === 0) {
+        return false;
+      }
+      if (closedParens.indexOf(input[i]) === openParens.indexOf(stack[stack.length - 1])) {
+        stack.pop()
+      }
+    }
+  }
+  return !stack.length;
 }
 
 module.exports = balancedParens;
