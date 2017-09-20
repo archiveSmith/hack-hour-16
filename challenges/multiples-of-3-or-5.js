@@ -22,28 +22,14 @@ function sumMultiples3Or5Below1000() {
 // and returns the sum of multiples of x and y below z
 function sumMultiplesXOrYBelowZ(x, y, z) {
   let sum = 0;
-
-
-  if(x > y){
-    j = x;
-    i = y;
-  } else {
-    j = y;
-    i = x;
-  }
   
-  var j = y; 
-  
-  for(var i = x; i < 1000; i=i+x){
-  if(j < z){
-  sum = sum + i + j;
-  j = j + y;
-  } else {
-    sum = sum + i
+  for(var i = 1; i < z; i++){
+    if(i % x === 0 || i % y === 0){
+      console.log(i)
+      sum = sum + i
+    }
   }
-  }
-
-  return sum;
+return sum
 }
 
 const objectToExport = {
