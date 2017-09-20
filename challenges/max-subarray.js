@@ -13,11 +13,15 @@ function maxSubarray(arr) {
 
   for (i = 0; i < arr.length; i++) {
     currentMax = Math.max(0, currentMax + arr[i]);
-    //console.log(currentMax);
+    // console.log(currentMax);
     max = Math.max(max, currentMax)
-    //console.log(max)
+    // console.log(max)
+  }
+  if (max === 0) {
+    return arr.sort((a, b) => b - a)[0]
   }
   return max
 }
 console.log(maxSubarray([-1, -2, 3, 10, -4, 7, 2, -5]))
+console.log(maxSubarray([-1,-2]))
 module.exports = maxSubarray;
