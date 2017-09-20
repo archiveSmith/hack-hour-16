@@ -44,4 +44,6 @@ function hasCycle(head) {
   return false;
 }
 
+// Floyds cycle detection algorithm - check out!
+
 module.exports = {Node: Node, hasCycle: hasCycle}
