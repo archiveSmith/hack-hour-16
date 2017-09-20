@@ -27,13 +27,35 @@
  *
  */
 
-var Node = function(value) {
+var Node = function (value) {
   this.value = value;
   this.next = null;
 }
 
 function hasCycle(head) {
+  //if head is not null
+  if (head) {
 
+
+    //create a pointer to head
+    let curr = head;
+
+    //delcare array to store seen nodes
+    const nodes = [];
+    //while pointer is not null
+    while (curr) {
+      // loop through nodes array
+      for(let i = 0; i < nodes.length; i++ ) {
+        if(curr === nodes[i]) return true;
+      }
+      nodes.push(curr)
+      curr = curr.next;
+      //if pointer is the same as one of the nodes, return true
+      //otherwise push node into nodes array
+      //traverse to next node
+    }
+  }
+  //otherswise there is no cycle
 }
 
-module.exports = {Node: Node, hasCycle: hasCycle}
+module.exports = { Node: Node, hasCycle: hasCycle }
