@@ -27,9 +27,10 @@ function anagrams(string) {
     }
   }
   permutations(arr)
-  return result.map(arr => arr.join(''))
+  result = result.map(arr => arr.join(''))
+  return result.filter((perm, i) => result.indexOf(perm) === i)
 }
-console.log(anagrams('abc'))
+console.log(anagrams('bcb'))
 module.exports = anagrams;
 
 // function permutations(array, m = []) {
