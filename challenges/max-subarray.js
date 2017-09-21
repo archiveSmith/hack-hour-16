@@ -8,7 +8,21 @@
  */
 
 function maxSubarray(arr) {
-
+    let final = 0;
+    let middleG;
+    let i = 1;
+    
+    for(i; i < (arr.length/2) + 1; i++){
+      let mid = arr.slice(Math.floor((arr.length/2) - i), Math.floor((arr.length/2) + i));
+      let compare = mid.reduce((a, b) => a + b, 0);
+      if(compare > final){
+        final = compare;
+        middleG = mid;
+      }
+      compare = 0;
+    }
+    
+    return final
 }
 
 module.exports = maxSubarray;

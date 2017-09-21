@@ -8,7 +8,21 @@
 
 
 function countTwos(num) {
+  let twoCount = 0;
 
+  for(let i = 1; i < num; i++){
+    let numToShave = i;
+    
+    while(numToShave > 0){
+      const lastDigit = numToShave % 10;
+      if(lastDigit === 2) twoCount += 1;
+      numToShave = shaveDigit(numToShave);
+    }
+  }
+
+  return twoCount;
 }
+  
+  console.log(countTwos(1234));
 
 module.exports = countTwos;

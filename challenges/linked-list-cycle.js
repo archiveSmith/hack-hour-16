@@ -33,6 +33,7 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  if(!head) return false;
   let valArray = [];
   
   while(!valArray.includes(head.value) && head.next){
@@ -53,4 +54,24 @@ function hasCycle(head) {
  hasCycle(node1); // => false
  node5.next = node2;
  hasCycle(node1); //=> true
+
+//Floyd's Cycle Detection Algorithim
+/* 
+function hasCycle(head){
+  let tortoise = head;
+  let hare = tortoise;
+
+  if(!head) return false;
+
+  while(hare.next) {
+    tortoise = tortoise.next;
+    hare = hare.next.next;
+    if(hare === tortoise) return true;
+  }
+
+  return false;
+}
+*/
+
+
 module.exports = {Node: Node, hasCycle: hasCycle}
