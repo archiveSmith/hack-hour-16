@@ -40,7 +40,7 @@ function anagrams(string) {
       generate(arr.length);
       return permutations;
     }    
-    
+  console.log(permutationArr(string.split('')))
     return permutationArr(string.split(''))
 
 }
