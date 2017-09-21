@@ -7,8 +7,13 @@
 
 function sumMultiples3Or5Below1000() {
   let sum = 0;
+  const threesSum = 3 * ((Math.floor(999 / 3) * (Math.floor(999 / 3) + 1) / 2));
+  const fivesSum = 5 * ((Math.floor(999 / 5) * (Math.floor(999 / 5) + 1) / 2));
+  const fifteensSum = 15 * ((Math.floor(999 / 15) * (Math.floor(999 / 15) + 1) / 2));
+  sum = threesSum + fivesSum - fifteensSum;
 
   return sum;
+  // 233168
 }
 
 
