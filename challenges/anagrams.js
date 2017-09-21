@@ -13,7 +13,32 @@
   */
 
 function anagrams(string) {
+  let arr = string.split('')
+  let result = [];
 
+  function permutations(array, m = []) {
+    if (array.length === 0) result.push(m)
+    else {
+      for (let i = 0; i < array.length; i++) {
+        let curr = array.slice();
+        let next = curr.splice(i,1)
+        permutations(curr.slice(), m.concat(next))
+      }
+    }
+  }
+  permutations(arr)
+  return result.map(arr => arr.join(''))
 }
-
+console.log(anagrams('abc'))
 module.exports = anagrams;
+
+// function permutations(array, m = []) {
+//   if (array.length === 0)
+//   else {
+//     for (let i = 0; i < array.length; i++) {
+//       let curr = array.slice();
+//       let next = curr.splice(i,1)
+//       permutations(curr.slice(), m.concat(next))
+//     }
+//   }
+// }
