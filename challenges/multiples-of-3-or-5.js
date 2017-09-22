@@ -33,4 +33,6 @@ const objectToExport = {
   sumMultiplesXOrYBelowZ,
 };
 
+// Check out triangular number formula
+
 module.exports = objectToExport;

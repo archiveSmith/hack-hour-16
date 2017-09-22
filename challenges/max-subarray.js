@@ -7,6 +7,9 @@
  *
  */
 
+ // FYI Could use reduce also .. Check out slides ... worth thinking about this one.
+ // ------------------------
+
 function maxSubarray(array) {
   let start = 0;
   let end = array[array.legth - 1];
@@ -28,6 +31,8 @@ function maxSubarray(array) {
   return max;
 }
 
+
+
 function getSubSum(start, end, array) {
   let sum = 0;
   for (let i = start; i <= end; i += 1) {
@@ -36,4 +41,6 @@ function getSubSum(start, end, array) {
   return sum;
 }
 
-module.exports = maxSubarray;
+console.log(maxSubarray([1, -2, 3, 10, -4, 7, 2, -5]));
+
+// module.exports = maxSubarray;

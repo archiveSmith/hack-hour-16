@@ -12,8 +12,18 @@
   * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
   */
 
-function anagrams(string) {
-
-}
+  function anagrams(str) {
+    if (str.length === 1) return str;
+    const perms = [];
+    for (let i = 0; i < str.length; i += 1) {
+      const char = str[i];
+      const remain = str.slice(0, i) + str.slice(i + 1, str.length);
+      for (let perm of anagrams(remain)) {
+        perms.push(char + perm);
+      }
+      console.log(perms);
+    }
+    return perms;
+  }
 
 module.exports = anagrams;
