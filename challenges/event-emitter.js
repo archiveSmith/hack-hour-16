@@ -41,8 +41,4 @@ console.log(instance)
 console.log(counter)
 instance.trigger('increment')
 console.log(counter)
-
-
-module.exports = EventEmit
-
-ter;
+module.exports = EventEmitter;
