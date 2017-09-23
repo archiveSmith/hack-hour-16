@@ -18,6 +18,7 @@
     for (let i = 0; i < str.length; i += 1) {
       const char = str[i];
       const remain = str.slice(0, i) + str.slice(i + 1, str.length);
+      // const restofAnagrams = anagrams(remain); then combine these with the char then push into perms
       for (let perm of anagrams(remain)) {
         perms.push(char + perm);
       }
