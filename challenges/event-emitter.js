@@ -26,19 +26,27 @@ function EventEmitter() {
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-  this.events[funcName] = func
+  if (!this.events[funcName]) {
+    this.events[funcName] = []
+  }
+  this.events[funcName].push(func)
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
-  this.events[funcName](args)
+  // console.log('arguments provided for trigger: ', args)
+  this.events[funcName].forEach(listener => {
+    listener(...args)
+  })
 };
 let instance = new EventEmitter()
 var counter = 0
 instance.on('increment', function () {
   counter++
 })
-console.log(instance)
-console.log(counter)
-instance.trigger('increment')
+instance.on('increment', function(name) {
+  console.log('HELLO MY NAME IS: ', name)
+})
+
+instance.trigger('increment', 'grant')
 console.log(counter)
 module.exports = EventEmitter;
