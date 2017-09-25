@@ -12,7 +12,17 @@ findInOrderedSet(nums, 2);  -> false
 
 function findInOrderedSet(arr, target) {
   if (!Array.isArray(arr)) return false
-  return arr.indexOf(target) > -1
+  let min = arr[0] - 1
+  let max = arr.length - 1
+  let mid;
+
+  while (min <= max) {
+    mid = Math.floor((min + max)/2)
+    if (arr[mid] > target) max = mid - 1;
+    else if (arr[mid] < target) min = mid + 1;
+    else return true
+  }
+  return false
 }
 let nums = [1, 4, 6, 7, 9, 17, 45]
 console.log(findInOrderedSet(nums, 4))
