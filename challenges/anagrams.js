@@ -21,7 +21,6 @@
       let splitString = newString.split('').slice(0, newString.length);
       let lastCombo = splitString.pop()
       splitString.unshift(lastCombo)
-      console.log(splitString)
       newString = splitString.join('')
       splitString[splitString.length - 2] = splitString.splice(splitString.length - 1, 1, splitString[splitString.length - 2])[0];
       if(!combinations.includes(splitString.join(''))) combinations.push(splitString.join(''))

@@ -19,7 +19,6 @@ const deleteDups = (head) => {
     
     while(current){
         if(!temporaryBuffer.includes(current.value)){
-          console.log(current.value);
             temporaryBuffer.push(current.value)
         } else{
           previous.next = current.next
