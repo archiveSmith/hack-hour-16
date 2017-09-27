@@ -61,4 +61,4 @@ function addLinkedList(l1, l2, pointer = new Node()) {
   return answer
 }
 console.log(addLinkedList(one,two))
-module.exports = {Node: Node, addLinkedList: addLinkedList};
+module.exports = {Node, addLinkedList};
