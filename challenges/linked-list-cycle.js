@@ -43,4 +43,21 @@ function hasCycle(head) {
   return false;
 }
 
+// //Floyd's cycle detection algorithm
+//
+// function hasCycle(head) {
+//   // create two pointers, tortoise / hare
+//   let tortoise = head;
+//   let hare = tortoise;
+//   // if argument is null return false
+//   if (!head) return false;
+//   // while hare.next is not null
+//   while (hare.next) {
+//     // advance tortoise pointer normally
+//     // advance hare pointer at twice the speed as tortoise pointer
+//     tortoise = tortoise.next;
+//     hare = hare.next.next;
+//
+//   }
+// }
 module.exports = {Node: Node, hasCycle: hasCycle}
