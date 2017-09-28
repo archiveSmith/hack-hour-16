@@ -9,8 +9,18 @@
  * Complete the challenge in O(1) space
  *
  */
-function uniqueNumber(array) {
+// const uniqueNumber = array => {
+//     let pushaT = [];
+    
+//     for(let i = 0; i < array.length; i++){
+//       if(pushaT.includes(array[i])) pushaT = pushaT.slice(pushaT.indexOf(array[i]))
+//       else pushaT.push(array[i])
+//     }
+//     return pushaT[0];
+//   }
 
-}
+
+const uniqueNumber = arr => arr.reduce((acc, val) => acc^val);
+
 
 module.exports = uniqueNumber;
