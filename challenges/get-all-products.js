@@ -10,7 +10,14 @@
  */
 
 function getAllProducts(array) {
-
+  let maxProduct = array.reduce((product, num) => {
+    return product * num
+  })
+  let allProducts = []
+  for (let i = 0; i < array.length; i++) {
+    allProducts.push(maxProduct/array[i])
+  }
+  return allProducts
 }
-
+console.log(getAllProducts([1, 7, 3, 4]))
 module.exports = getAllProducts;
