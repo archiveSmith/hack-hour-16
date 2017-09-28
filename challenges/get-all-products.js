@@ -10,13 +10,16 @@
  */
 
 function getAllProducts(array) {
-  return array.map((num) => {
+  if (!array.length) return [0]
+  const result = [];
+  for (let j = 0; j < array.length; j += 1) {
     let value = 1;
     for (let i = 0; i < array.length; i += 1) {
-      if (array[i] !== num) value *= array[i];
+      if (array[i] !== array[j]) value *= array[i];
     }
-    return value;
-  });
+    if (value !== 0) result.push(value);
+  }
+  return result;
 }
 
 module.exports = getAllProducts;
