@@ -41,7 +41,6 @@ LinkedList.prototype.remove = function(val) {
         this.head = null
         this.tail = null
       } else if (current === this.head) {
-        //middle of the list
         this.head = this.head.next
         this.head.prev = null
       } else if (current === this.tail) {
@@ -52,15 +51,16 @@ LinkedList.prototype.remove = function(val) {
         current.prev.next = current.next
         current.next.prev = current.prev
       }
+    } else {
+      current = current.next
     }
-    current = current.next
   }
 };
 
 let list = new LinkedList()
-list.add('hi')
+// list.add('hi')
 list.add('hello')
-list.add('HELLO!23')
+// // list.add('HELLO!23')
 list.remove('hello')
 console.log(list)
 
