@@ -18,11 +18,19 @@ Adds a node to the end of the list
  */
 LinkedList.prototype.add = function (val) {
   const newNode = new Node(val)
-  const tail = this.tail
-  newNode.prev = tail
-  tail.next = newNode
-  this.tail = newNode
 
+  // if empty
+  if (this.head == null) {
+    this.head = newNode
+    this.tail = newNode
+  }
+
+  else {
+    const tail = this.tail
+    newNode.prev = tail
+    tail.next = newNode
+    this.tail = newNode
+  }
 };
 
 /*
@@ -51,5 +59,11 @@ LinkedList.prototype.remove = function (val) {
   }
 
 };
+
+let myList = new LinkedList(1)
+// myList.add(2)
+// myList.add(3)
+
+// console.log(myList)
 
 module.exports = LinkedList;
