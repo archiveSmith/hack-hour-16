@@ -16,6 +16,31 @@ function uniqueNumber(array) {
   }
 }
 
+// Add/Remove Duplicates O(n)
+function uniqueNumber2(array) {
+  var store = {};
+  
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] in store) {
+      delete store[array[i]];
+    } else {
+      store[array[i]] = true;
+    }
+  }
+  
+  return Object.keys(store)[0];
+}
+
+// Bitwise XOR O(n)
+function uniqueNumber3(array) {
+  var result = 0;
+  for (var i = 0; i < array.length; i++) {
+    result = result ^ array[i];
+  }
+  return result;
+}
+
+
 console.log(uniqueNumber([1,2,1,3,3]));
 
 module.exports = uniqueNumber;
