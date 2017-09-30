@@ -10,16 +10,32 @@
  */
 
 function getAllProducts(array) {
-  if (!array.length) return [0]
+  // Create three arrays - front, back, result
+  const front = [];
+  const back = [];
   const result = [];
-  for (let j = 0; j < array.length; j += 1) {
-    let value = 1;
-    for (let i = 0; i < array.length; i += 1) {
-      if (array[i] !== array[j]) value *= array[i];
-    }
-    if (value !== 0) result.push(value);
+  // define productSoFar, initialize to 1
+  let productSoFar = 1;
+  // iterate through array forwards - set to 1 to exclude the current value
+  for (let i = 0; i < array.length; i += 1) {
+    front[i] = productSoFar;
+    productSoFar += array[i];
+  }
+  // iterate through array backwards - same thing
+  productSoFar = 1;
+  for (let j = array.length - 1; j >= 0; j -= 1) {
+    back[j] = productSoFar;
+    productSoFar *= array[j];
+  }
+  // multiply both arrays
+  for (let k = 0; k < array.length; k += 1) {
+    result[k] = front[k] * back[k];
   }
   return result;
+  // original: [1, 7, 3, 4]
+  // forward: [1, 1, 7, 3, 4]
+  // backward: [84, 12, 4, 1]
+  // result: [84, 12, 28, 21]
 }
 
 module.exports = getAllProducts;
