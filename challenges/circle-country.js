@@ -23,7 +23,45 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
-
+  
+    count = 0
+    
+    for(var i = 0; i < x.length; i++){
+    
+    //distance is the distance between center of circle to (start_x,start_y)
+     distance = Math.sqrt(Math.pow(x[i] - start_x, 2) + Math.pow(y[i] - start_y,2))
+    console.log(distance)
+    
+    if(distance < r[i]) {
+      
+      count++
+      
+    }
+    
+    
+    }
+  
+    
+      for(var i = 0; i < x.length; i++){
+    
+    //distance is the distance between center of circle to (start_x,start_y)
+     distance = Math.sqrt(Math.pow(x[i] - end_x, 2) + Math.pow(y[i] - end_y,2))
+    console.log(distance)
+    
+    if(distance < r[i]) {
+      
+      count++
+      
+    }
+    
+    
+    }
+  
+    
+    
+    
+  return count
+    
 }
 
 module.exports = circleCountry;
