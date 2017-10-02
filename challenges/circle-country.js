@@ -23,7 +23,18 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
-
+  for (let i = 0; i < x.length; i += 1) {
+    let start = -1;
+    if (
+      start_x < x[i] + r[i] &&
+      start_x > x[i] - r[i] &&
+      start_y < y[i] + r[i] &&
+      start_y > y[i] - r[i]
+    ) start = i;
+    
+  }
 }
+
+console.log(circleCountry([20, 5], [10, 5], [5, 2], 6, 6));
 
 module.exports = circleCountry;
