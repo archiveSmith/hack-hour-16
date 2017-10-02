@@ -32,14 +32,20 @@ Adds a node to the end of the list
  */
 LinkedList.prototype.add = function(val) {
   const node = new Node(val);
-  this.tail.next = node;
-  node.prev = this.tail;
-  this.tail = node;
+  if (!this.head) this.head = this.tail = node;
+  else {
+    this.tail.next = node;
+    node.prev = this.tail;
+    this.tail = node;
+  }
 };
 
 /*
 Removes the first node with the inputted value
  */
+
+// GO OVER THIS AGAIN!!!
+
 LinkedList.prototype.remove = function(val) {
   let node = this.head;
   while (node) {
