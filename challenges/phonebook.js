@@ -41,42 +41,49 @@ const book = [
 ];
 
 // return an object literal representing the jazbook
-class makePhoneBookObject {
-  constructor(jazbook) {
-    this.jazbook = jazbook.reduce((newBook, el) => {
-      newBook[el[0]] = el[1]
-      return newBook
-    }, {})
-  }
 
-  addContact (name, phoneNumber) {
-    if (this.jazbook[name]) {
-      console.log('Name already exists in  jazbook')
-    }
-    this.jazbook[name] = phoneNumber
-  }
-
-  removeContact (name) {
-    if (this.jazbook[name]) {
-      delete this.jazbook[name]
-    } else {
-      console.log(`Cannot find ${name} in jazbook`)
-    }
-  }
-
-  searchContact (name) {
-    if (this.jazbook[name]) return this.jazbook[name]
-    return console.log(`Cannot find ${name} in jazbook`)
-  }
-
+function makePhoneBookObject(jazbook) {
+  return jazbook.reduce((newBook, el) => {
+    newBook[el[0]] = el[1]
+    return newBook
+  }, {})
 }
-const newBook = new makePhoneBookObject(book)
+// class makePhoneBookObject {
+//   constructor(jazbook) {
+//     this.jazbook = jazbook.reduce((newBook, el) => {
+//       newBook[el[0]] = el[1]
+//       return newBook
+//     }, {})
+//   }
+//
+//   addContact (name, phoneNumber) {
+//     if (this.jazbook[name]) {
+//       console.log('Name already exists in  jazbook')
+//     }
+//     this.jazbook[name] = phoneNumber
+//   }
+//
+//   removeContact (name) {
+//     if (this.jazbook[name]) {
+//       delete this.jazbook[name]
+//     } else {
+//       console.log(`Cannot find ${name} in jazbook`)
+//     }
+//   }
+//
+//   searchContact (name) {
+//     if (this.jazbook[name]) return this.jazbook[name]
+//     return console.log(`Cannot find ${name} in jazbook`)
+//   }
+//
+// }
+// const newBook = new makePhoneBookObject(book)
+// // console.log(newBook)
+// newBook.addContact('grant', '213-608-5443')
+// // console.log(newBook)
+// // newBook.removeContact('grant')
+// console.log(newBook.searchContact('grant'))
 // console.log(newBook)
-newBook.addContact('grant', '213-608-5443')
-// console.log(newBook)
-// newBook.removeContact('grant')
-console.log(newBook.searchContact('grant'))
-console.log(newBook)
 
 
 const objectToExport = {
