@@ -11,7 +11,62 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  const arr = str.split('');
+  const x = Number(arr[0]);
+  const y = Number(arr[2]);
 
+  let counter = 0;
+
+  // check bounds
+  // one [up, left]
+  if (x - 1 >= 1 && x - 1 <= 8 && y + 2 >= 1 && y + 2 <= 8) {
+    counter++;
+  }
+  // two [up, right]
+  if (x + 1 >= 1 && x + 1 <= 8 && y + 2 >= 1 && y + 2 <= 8) {
+    counter++;
+  }
+
+  // three [down, left]
+  if (x - 1 >= 1 && x - 1 <= 8 && y - 2 >= 1 && y - 2 <= 8) {
+    counter++;
+  }
+
+  // four [down, right]
+  if (x + 1 >= 1 && x + 1 <= 8 && y - 2 >= 1 && y - 2 <= 8) {
+    counter++;
+  }
+
+  // five [left, up]
+  if (x - 2 >= 1 && x - 2 <= 8 && y + 1 >= 1 && y + 1 <= 8) {
+    counter++;
+  }
+
+  // six [left, down]
+  if (x - 2 >= 1 && x - 2 <= 8 && y - 1 >= 1 && y - 1 <= 8) {
+    counter++;
+  }
+  // seven [right, up]
+  if (x + 2 >= 1 && x + 2 <= 8 && y + 1 >= 1 && y + 1 <= 8) {
+    counter++;
+  }
+
+  // eight [right, down]
+  if (x + 2 >= 1 && x + 2 <= 8 && y - 1 >= 1 && y - 1 <= 8) {
+    counter++;
+  }
+  return counter;
 }
 
+// console.log(knightjumps('5 5'));
+
 module.exports = knightjumps;
+
+
+// can move 8 spaces if in (3->6, 3->6)
+
+// if on a corner, can only move two places
+
+// get (x, y pair)
+  // check if 8 positions are in board
+  // incriment counter

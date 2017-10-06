@@ -27,13 +27,38 @@
  *
  */
 
-var Node = function(value) {
+var Node = function (value) {
   this.value = value;
   this.next = null;
 }
 
 function hasCycle(head) {
-
+  // loop through linked list
+  let curNode = head;
+  let values = [];
+  while (curNode !== null) {
+    if (values.indexOf(curNode.value) !== -1) return true;
+    values.push(curNode.value);
+    curNode = curNode.next;
+  }
+  return false;
 }
 
-module.exports = {Node: Node, hasCycle: hasCycle}
+let head = new Node('a');
+let b = new Node('b');
+head.next = b;
+let c = new Node('c');
+b.next = c
+let d = new Node('d');
+c.next = d
+let e = new Node('e');
+d.next = e
+let f = new Node('f');
+d.next = f;
+let g = new Node('g');
+f.next = g;
+g.next = b;
+
+console.log(hasCycle(head))
+
+module.exports = { Node: Node, hasCycle: hasCycle }

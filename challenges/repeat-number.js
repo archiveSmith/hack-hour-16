@@ -11,7 +11,13 @@
  */
 
 function repeatNumbers(array) {
+  // sort array
+  const sorted = array.sort();
 
+  // find duplicate
+  for (let i = 0; i < sorted.length; i++) {
+    if (sorted[i] === sorted[i+1]) return sorted[i];
+  }
 }
 
 module.exports = repeatNumbers;

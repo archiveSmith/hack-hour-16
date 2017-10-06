@@ -18,7 +18,64 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
+  let num1 = [];
+  let num2 = [];
+  let total;
+  let curNode = l1;
+
+  // loop through both lists to extract number from nodes
+  // list 1
+  while (curNode) {
+    num1.push(curNode.value);
+    curNode = curNode.next;
+  }
+
+  // list 2
+  curNode = l2;
+  while (curNode) {
+    num2.push(curNode.value);
+    curNode = curNode.next;    
+  }
+
+  // concat numbers from each list, then reverse
+  num1 = Number(num1.reverse().join(''));
+  num2 = Number(num2.reverse().join(''));
+  // add numbers together
+  total = num1 + num2;
+
+  // console.log(`total: ${total} num1: ${num1} num2: ${num2}`)
+  // reverse number, then split new number into digits
+  total = String(total).split('').reverse();
+  
+  // put digits inside a linked list
+  curNode = new Node(total[0]);
+  startNode = curNode;
+  for(let i = 1; i < total.length; i++) {
+    curNode.next = new Node(total[i]);
+    curNode = curNode.next;
+  }
+
+  // console.log(startNode);
+  return startNode;
 
 }
 
-module.exports = {Node: Node, addLinkedList: addLinkedList};
+let l1 = new Node(2);
+let n2 = new Node(1);
+l1.next = n2;
+let n3 = new Node(5);
+n2.next = n3;
+
+let l2 = new Node(5);
+let n4 = new Node(9);
+l2.next = n4;
+let n5 = new Node(2);
+n4.next = n5
+
+addLinkedList(l1, l2);
+
+// Input: (2 -> 1 -> 5) + (5 -> 9 -> 2)
+// Output: 7 -> 0 -> 8
+
+
+module.exports = { Node: Node, addLinkedList: addLinkedList };

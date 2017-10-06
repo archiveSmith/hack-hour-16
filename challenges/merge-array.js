@@ -13,8 +13,72 @@
  *
  */
 
-function mergeArrays(arr1, arr2) {
+/// EASY solution
+  // concat arrays
+  // sort concated arrays
 
+// MY SOLUTION
+function mergeArrays(arr1, arr2) {
+  let index1 = 0;
+  let index2 = 0;
+  let merged = [];
+
+  while (index1 < arr1.length && index2 < arr2.length) {
+    // if arr1 > arr2
+    if (arr1[index1] > arr2[index2]) {
+      merged.push(arr2[index2]);
+      index2++;
+    }
+    // if arr1 > arr2
+    else if (arr2[index2] > arr1[index1]) {
+      merged.push(arr1[index1]);
+      index1++;
+    }
+  }
+
+  // fill in rest of arr1 and arr2
+  if (index1 === arr1.length) {
+    // finish arr2
+    for (let i = index2; index2 < arr2.length; i++) {
+      merged.push(arr2[index2]);
+    }
+  }
+  else if (index2 === arr2.length) {
+    for (let i = index1; index1 < arr1.lengthl; i++) {
+      merged.push(arr1[index1]);
+    }
+  }
+
+  return merged;
 }
+
+
+// Trying to do it in place, NOT DONE
+// function mergeArrays(arr1, arr2) {
+//   let index1 = 0;
+//   let index2 = 0;
+
+//   while (index1 < arr1.length && index2 < arr2.length) {
+//     console.log(`index2: ${index2},  val: ${arr2[index2]}`);
+//     console.log(`index1: ${index1},  val: ${arr1[index1]}`);
+//     // check if arr2 spot should be inserted in arr 1
+//     if (arr2[index2] < arr1[index1]) {
+//       arr1.splice(index2, 0, arr2[index2]);
+//       index2++;
+//       index1++;
+//     } 
+//     else {
+//       index1++;
+//     }
+//   }
+//   // do something when a number runs out
+//   // if ()
+//   return arr1;
+// }
+
+var my_array = [3,4,6,10,11,15,21];
+var another_array = [1,5,8,12,14,19];
+console.log(mergeArrays(my_array, another_array));
+
 
 module.exports = mergeArrays;
