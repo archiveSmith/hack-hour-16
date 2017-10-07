@@ -12,12 +12,13 @@
 
 function knightjumps(str) {
   const arr = str.split('');
-  const x = Number(arr[0]);
+  const x = Number(arr[1]);
   const y = Number(arr[3]);
 
   let counter = 0;
 
   // check bounds
+  
   // one [up, left]
   if (x - 1 >= 1 && x - 1 <= 8 && y + 2 >= 1 && y + 2 <= 8) counter++;
   // two [up, right]
@@ -32,16 +33,14 @@ function knightjumps(str) {
   if (x - 2 >= 1 && x - 2 <= 8 && y - 1 >= 1 && y - 1 <= 8) counter++;
   // seven [right, up]
   if (x + 2 >= 1 && x + 2 <= 8 && y + 1 >= 1 && y + 1 <= 8) counter++;
-
   // eight [right, down]
-  if (x + 2 >= 1 && x + 2 <= 8 && y - 1 >= 1 && y - 1 <= 8) {
-    counter++;
-  }
+  if (x + 2 >= 1 && x + 2 <= 8 && y - 1 >= 1 && y - 1 <= 8) counter++;
+  
   return counter;
 }
 
-console.log(knightjumps('5 5'));
-console.log(knightjumps('1 1'));
+console.log(knightjumps('5, 5'));
+console.log(knightjumps('1, 1'));
 
 module.exports = knightjumps;
 
@@ -53,3 +52,11 @@ module.exports = knightjumps;
 // get (x, y pair)
   // check if 8 positions are in board
   // incriment counter
+
+// ************
+// * APPROACH *
+// ************
+
+// declare an array with eight coordinate shifts
+
+// 
