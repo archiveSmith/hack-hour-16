@@ -9,6 +9,27 @@
 
 function maxSubarray(arr) {
 
+    sumAry = [];
+    for(var i = 0; i < arr.length; i++){
+      for(var j = 0; j < arr.length+1; j++){
+         if(i >= j ){
+           continue;
+         } else {
+          subAry = arr.slice(i, j)
+          console.log(subAry)
+          //compute sum
+          var sum = 0
+          for( var k = 0; k < subAry.length; k++){
+            sum = sum + subAry[k];
+          }
+         }
+          console.log(sum)
+      sumAry.push(sum)
+         }
+      }
+      console.log(sumAry)
+      MAX = Math.max(...sumAry)
+    return MAX
 }
 
 module.exports = maxSubarray;
