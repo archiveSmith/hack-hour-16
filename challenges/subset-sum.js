@@ -9,7 +9,18 @@
  */
 
 function subsetSum(array, target) {
-
-}
+  for (var i = 0; i < array.length; i++) {
+      if (array[i] === target) {
+        return true;
+      };
+      else if (array[i] < target) {
+        var newArray = array.slice(i+1);
+        if (subsetSum(newArray, target - array[i])) {
+            return true;
+        };
+      };
+  };
+    return false;
+};
 
 module.exports = subsetSum;

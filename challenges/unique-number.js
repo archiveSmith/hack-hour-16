@@ -9,8 +9,15 @@
  * Complete the challenge in O(1) space
  *
  */
-function uniqueNumber(array) {
-
+const uniqueNumber = (array) => {
+  let count = 0;
+  let currNum = array.pop()
+  if (array.indexOf(currNum) === -1) {
+    return currNum
+  } else {
+    array.splice(array.indexOf(currNum),1)
+    return uniqueNumber(array)
+  }
 }
 
 module.exports = uniqueNumber;

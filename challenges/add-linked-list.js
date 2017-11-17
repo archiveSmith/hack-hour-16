@@ -16,9 +16,49 @@ function Node(val) {
   this.value = val;
   this.next = null;
 }
-
-function addLinkedList(l1, l2) {
-
+let one = new Node(1);
+one.next = new Node(2);;
+one.next.next = new Node(3);;
+let two = new Node(4);
+two.next = new Node(5);
+two.next.next = new Node(6);
+// function addLinkedList(l1, l2, answer = [l1.value+l2.value]) {
+//   if (!l1.next && !l2.next) {
+//     return answer
+//   }
+//   if (l1.next && l2.next) {
+//     answer.push(l1.next.value + l2.next.value)
+//   }
+//   if (l1.next && !l2.next) {
+//     answer.push(l1.next.value)
+//   }
+//   if (!l1.next && l2.next) {
+//     answer.push(l2.next.value)
+//   }
+//   l1 = l1.next
+//   addLinkedList(l1, l2, answer)
+// }
+let answer = new Node()
+function addLinkedList(l1, l2, pointer = new Node()) {
+  if(!answer.value) answer.value = l1.value + l2.value
+  pointer = answer
+  if (!l1.next && !l2.next) {
+    return answer
+  }
+  while (l1 && l2) {
+    pointer = pointer.next
+    l1 = l1.next
+    l2 = l2.next
+  }
+  console.log('answer', answer)
+  if (l1.next && !l2.next) {
+    answer.next = new Node(l1.next.value)
+  }
+  if (!l1.next && l2.next) {
+    answer.next = new Node(l2.next.value)
+  }
+  
+  return answer
 }
-
-module.exports = {Node: Node, addLinkedList: addLinkedList};
+console.log(addLinkedList(one,two))
+module.exports = {Node, addLinkedList};

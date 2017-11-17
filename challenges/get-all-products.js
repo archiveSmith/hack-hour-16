@@ -10,7 +10,14 @@
  */
 
 function getAllProducts(array) {
-
-}
+  let answer = [];
+ 	array.forEach((elem, i, arr) => {
+    answer.push(arr.reduce((a, b) => {
+      if (a === elem) {return b}
+      return b !== elem ? a * b : a
+    }));
+  })
+  return answer;
+};
 
 module.exports = getAllProducts;

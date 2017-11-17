@@ -21,16 +21,31 @@
  * - It is not necessary to write a way to remove listeners.
  */
 
+let counter = 0
+const incremented = () => {
+  counter++
+}
+
 function EventEmitter() {
 
 }
 
-EventEmitter.prototype.on = function(funcName, func) {
 
+EventEmitter.prototype.on = function(funcName, func) {
+	if (funcName) {
+  	this.trigger(func)
+  }
+  console.log('listening for: ')
+  return funcName;
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
-
+  funcName()
 };
+let instance = new EventEmitter();
+console.log(instance.on('incremented', function() { counter++ }))
+console.log(counter)
+console.log(instance.trigger(instance))
+console.log(counter)
 
 module.exports = EventEmitter;
