@@ -13,10 +13,13 @@
 
 */
 
-function drawStairs(n) {
-  if (1 <= n && n <= 100) {
-    for (var i = 1; i <= n; i++) {
-    console.log(" ".repeat(n - i) + "*".repeat(i));
+function drawStairs(num) {
+  // check to see if 1 <= num <= 100
+  if (num >= 1 && num <= 100) {
+    // iterate starting from 1 and stop iteration when we reach num
+    for (let i = 1; i <= num; i += 1) {
+      // print blank spaces = (num - current iterator) and *s = current iterator
+      console.log((' ').repeat(num - i) + ('*').repeat(i));
     }
   }
 }
