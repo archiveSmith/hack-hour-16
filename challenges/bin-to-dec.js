@@ -13,26 +13,25 @@
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
 
-<<<<<<< HEAD
 
-function binToDec(binary) {
-      // start at right n = 1 each number to the left is multiplied by 2 unless element = 0
-  const toBinary = binary.split('');
-  let decimal = 0;
-  let digit = 1;
-  for (let i = binary.length-1; i >= 0; i--) {
-    if (parseInt(toBinary[i]) === 1) {
-      decimal += digit;
+function decToBin(decimal) {
+  let dec = decimal;
+  let bin = '';
+  let binSpaces = Math.floor(Math.log2(dec));
+  while (binSpaces >= 0){
+    let temp = Math.pow(2, binSpaces);
+    if (dec == temp) {
+      bin += '1' + '0'.repeat(binSpaces);
+      return bin;
     }
-    digit *= 2;
+    if (dec > temp) {
+      bin += '1';
+      dec -= temp;
+    } else bin+='0';
+    binSpaces--;
   }
-  return decimal;
+  return bin;
 }
 
-=======
-function binToDec(binary) {
-
-}
->>>>>>> 214a70737090c1c96eaccac86fd7f90582adbd23
 
 module.exports = binToDec;
