@@ -22,18 +22,20 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  // check for valid k
   if (k === 0) {
-  return "please select another k";
-}
-  // create an array and push head to array
-  let arr = [head];
-  // assign a variable to to the next node with head.next
+    return 'invalid k';
+  }
+  // declare a variable values = []
+  const values = [head.value];
   let nextNode = head.next;
-  // while looping push all the nodes to array until node.next = null
-  while (nextNode !== null) {
-    arr.push(nextNode);
+  // loop through all nodes in head
+  while (nextNode) {
+    // push value of current node in values array
+    values.push(nextNode.value);
+    // reassign head to next node
     nextNode = nextNode.next;
   }
-
-  return arr[arr.length - k].value;
+  // return kth to last element in values array
+  return values[values.length - k];
 }
