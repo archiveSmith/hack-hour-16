@@ -14,11 +14,16 @@
  */
 
 function reverseInPlace(array) {
-  if (!array || array.length === 0) return [];
-  const holder = array.splice(0, array.length);
-  for (let i = holder.length - 1; i >= 0; i--) {
-    array.push(holder[i]);
+  // loop through half of array
+  for (let i = 0; i < array.length / 2; i += 1) {
+    // store current element as a variable
+    const curr = array[i];
+    // set current element = array[array.length - (iterator + 1)];
+    array[i] = array[array.length - (i + 1)];
+    // set array[array.length - (iterator + 1)] = stored variable
+    array[array.length - (i + 1)] = curr;
   }
+  // return the array
   return array;
 }
 
