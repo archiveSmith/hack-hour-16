@@ -14,17 +14,19 @@
  */
 
 function binToDec(binary) {
-<<<<<<< HEAD
-  let multiplier = 1;
-  let sum = 0;
-  for (let i = binary.length - 1; i >= 0; i--) {
-    sum += parseInt(binary[i]) * multiplier;
-    multiplier *= 2;
+  // create a variable power = 1;
+  let power = 1;
+  // create variable result = 0;
+  let result = 0;
+  // loop through binary from right to left
+  for (let i = binary.length - 1; i >= 0; i -= 1) {
+    // add result with (the current parsed element multiplied by power)
+    result += parseInt(binary[i], 10) * power;
+    // multiply power by 2
+    power *= 2;
   }
-  return sum;
-=======
-
->>>>>>> 214a70737090c1c96eaccac86fd7f90582adbd23
+  // return result
+  return result;
 }
 
 module.exports = binToDec;
