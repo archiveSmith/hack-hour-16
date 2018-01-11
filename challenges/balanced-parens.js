@@ -24,64 +24,24 @@
  *
  */
 
-/////////////////////////////////
-////////// Solution 1 //////////
-///////////////////////////////
-
-function balancedParens(input){
-  let counter = 0;
-  let counter2 = 0;
-  let counter3 = 0;
-  let rightSide;
-  let rightBrack;
-  let rightCurly;
-  input.split('').forEach((char) => {
-    if (char === '(' || char === ')') {
-      if (rightSide === undefined && char === '(') rightSide = true;
-      else if (rightSide === undefined && char === ')') rightSide = false;
-      counter++;
-      if (char === ')') {
-        if (counter2 % 2 !== 0 || counter3 % 2 !== 0) rightSide = false;
-      }
-    }
-    else if (char === '[' || char === ']') {
-      if (rightBrack === undefined && char === '[') rightBrack = true;
-      if (rightBrack === undefined && char === ']') rightBrack = false;
-      counter2++;
-      if (char === ']') {
-        if (counter % 2 !== 0 || counter3 % 2 !== 0) rightBrack = false;
-      }
-    }
-    else if (char === '{' || char === '}') {
-      if (rightCurly === undefined && char === '{') rightCurly = true;
-      else if (rightCurly === undefined && char === '}') rightCurly = false;
-      counter3++;
-      if (char === '}') {
-        if (counter % 2 !== 0 || counter2 % 2 !== 0) rightCurly = false;
-      }
-    }
-  });
-  if (!rightSide || !rightBrack || !rightCurly) return false;
-  if (counter % 2 !== 0 || counter2 % 2 !== 0 || counter3 % 2 !== 0) return false;
-  return true;
+function balancedParens(input) {
+  // define an array stack 
+  const stack = [];
+  // define an object brackets w/ keys as open parens and values as its corresponding closed parens
+  const brackets = {
+    '(': ')',
+    '[': ']',
+    '{': '}',
+  };
+  // loop through input 
+  for (let i = 0; i < input.length; i += 1) {
+    // if curr element is a key on the brackets object, push it's corresponding value into the stack
+    if (brackets[input[i]]) stack.push(brackets[input[i]]);
+    // if curr element is a closed parens && stack.pop() is NOT = to curr element return false
+    if ([')', ']', '}'].includes(input[i]) && stack.pop() !== input[i]) return false;
+  }
+  // return the boolean if the stack length is equal to 0
+  return stack.length === 0;
 }
-
- /////////////////////////////////
- ////////// Solution 2 //////////
- ///////////////////////////////
-
-// function balancedParens(string) {
-//   let stack = [];
-//   let brackets = {
-//     '(' : ')',
-//     '[' : ']',
-//     '{' : '}'
-//   };
-//   for (let i = 0; i < string.length; i += 1) {
-//     if (brackets.hasOwnProperty(string[i])) stack.push(brackets[string[i]]);
-//     if ([')', ']', '}'].includes(string[i]) && stack.pop() !== string[i]) return false;
-//   }
-//   return stack.length === 0;
-// }
 
 module.exports = balancedParens;
